@@ -4,7 +4,7 @@ This repository is your starting point for your project. Please look through all
 
 Link to your GitHub pages website: [https://github.com/NEU-DS-4200-F20/project-group-4-20th-century-workplace](https://neu-ds-4200-f20.github.io/project-group-4-20th-century-workplace/)
 
-# Aim of the assignmen
+# Aim of the assignment
 
 This assignment will make sure you and your group memebers are all set up correctly with a project repo.
 Moreover, it gives you a good and consistent starting point to begin coding.
