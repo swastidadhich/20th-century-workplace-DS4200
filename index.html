@@ -7,7 +7,7 @@
 
   <!-- Title -->
   <title>Project Team 4: 20th Century Workplace, DS 4200 F20</title>
-
+  
   <!-- CSS Styling -->
   <link rel='stylesheet' href='style.css'>
 
@@ -25,117 +25,85 @@
 <!-- Main page content -->
 <body>
 
-<!-- Update this with your GitHub repo URL -->
-<span id='forkongithub'><a
-    href='https://github.com/NEU-DS-4200-F20/project-group-4-20th-century-workplace'>Fork me on GitHub</a></span>
+  <!-- Update this with your GitHub repo URL -->
+  <span id='forkongithub'><a href='https://github.com/NEU-DS-4200-F20/project-group-4-20th-century-workplace'>Fork me on GitHub</a></span>
 
-<!-- Writeup -->
-<div class='content-column'>
-  <h1>Project Team 4: 20th Century Workplace, DS4200 F20</h1>
+  <!-- Writeup -->
+  <div class='content-column'>
+   <h1>Project Team ##: Topic, DS4200 F20</h1>
+    
+    <p><strong>Student One</strong>, <strong>Student Two</strong>, <strong>Student Three</strong></p>
+    
+    <p>Service-Learning Course Project as part of
+	<a href='https://canvas.instructure.com/courses/1781732'>DS 4200 F20: Information Visualization</a>, 
+	taught by <a href='https://cody.khoury.northeastern.edu/'>Prof. Cody Dunne</a>, 
+	<a href='https://visualization.khoury.northeastern.edu/'>Data Visualization @ Khoury</a>, 
+	<a href='https://www.khoury.northeastern.edu/'>Northeastern University</a>.</p>
+    
+    
+    <h1>Abstract</h1>
+    
+    <p>Professor Hilary Robinson and her team are conducting an interdisciplinary study of the issues arising from the arrival of the algorithmic workplace in the United States. This area is particularly interesting due to “the emergence of digital platforms in the economy that is rapidly transforming economic activity”. The research will develop new evidence about the workers, organizations, and government institutions involved in the ”algorithmic workplace”. We aim to create visual- izations for the research team to explain the data to the general public.</p>
 
-  <p><strong>Thura Naing</strong>, <strong>Mahin Master</strong>, <strong>Swasti Dadhich</strong>
-  </p>
+    
+    <h1>Visualization</h1>
+    
+    <p>We chose to use a line graph to display the frequency of a word over time. The tilt can help explain the slope of how much of an increase or decrease this specific issue is over time. 
+This visualization represents the  frequency of major topics in the search searches and the y axis represents the count which represents frequency. And on the x axis we have the major topics and on the y axis we have the associated frequencies. The line graph makes it easier to observe the trend, i.e. to see whether or not the frequencies of those words increase or decrease. 
+Each forum post is grouped into a specific category. This visualization explores the categories or topics of the posts to see which topics are most common. We used lines and areas as the mark and both vertical and horizontal position as a channel as well as size (length and area) as a channel. We chose to use a bar graph because of the categorical nature of the data. This visualization helps to show which topics are the most popular and which categories are the least popular. Because the topics are ordered based on frequency, we can see a complete distribution of the popularity of topics. The most popular topics are advice, complaints and stories.</p>
 
-  <p>Service-Learning Course Project as part of
-    <a href='https://canvas.instructure.com/courses/1781732'>DS 4200 F20: Information
-      Visualization</a>,
-    taught by <a href='https://cody.khoury.northeastern.edu/'>Prof. Cody Dunne</a>,
-    <a href='https://visualization.khoury.northeastern.edu/'>Data Visualization @ Khoury</a>,
-    <a href='https://www.khoury.northeastern.edu/'>Northeastern University</a>.</p>
-
-
-  <h1>Abstract</h1>
-
-  <p>Professor Hilary Robinson and her team are conducting an interdisci- plinary study of the
-    issues arising from the arrival of the algorithmic workplace in the United States. This area is
-    particularly interesting due to “the emergence of digital platforms in the economy that is
-    rapidly transforming economic activity”. [7] . The research will develop new evidence about the
-    workers, organizations, and govern- ment institutions involved in the ”algorithmic workplace”.
-    [7] . We aim to create visualizations for the research team to explain the data to the general
-    public.</p>
-
-  <h1>Visualization</h1>
-
-  <p>Include the interactive visualization as part of this page. Static example follows.</p>
-
-
-</div>
-
-<!-- Visualization goes here -->
-<script src="https://d3js.org/d3.v6.js"></script>
-<!-- Loading D3.js -->
-
-
-<!-- <div class='visualization-holder' id='vis'></div> -->
-<div class='vis-holder'>
-  <!-- Change viewbox to whatever you want, e.g., '0 0 1000 6000' This determines your aspect ratio and coordinate system -->
-  <!-- Delete all the sample SVG code below after the viewbox to before the closing tag. Populate this part of the SVG with D3. -->
-  <svg id='vis-svg-1'
-       preserveAspectRatio='xMidYMid meet' class='vis-svg' viewBox='0 0 1000 1000' version='1.1'
-       xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
-
-
-    <text x='30%' y='35%' text-anchor='middle'>A</text>
-    <text x='70%' y='35%' text-anchor='middle'>B</text>
-    <rect x='20%' y='40%' width='20%' height='20%' fill='yellow'></rect>
-    <circle cx='70%' cy='50%' r='10%' fill='blue'></circle>
-
+    
+  </div>
+  
+  <!-- Visualization goes here -->
+  <div class='vis-holder' id='vis'>
+    <link rel='stylesheet' type='text/css' href='linechart.css'>
+    <!-- Change viewbox to whatever you want, e.g., '0 0 1000 6000' This determines your aspect ratio and coordinate system -->    
+    <!-- Delete all the sample SVG code below after the viewbox to before the closing tag. Populate this part of the SVG with D3. -->
+      
     <!-- Don't delete the closing tag! -->
-  </svg>
-</div>
-
-<!-- Further writeup -->
-<div class='content-column'>
-
-  <h1>Demo Video</h1>
-
-  <p>Embed an MP4 demo video using the HTML5 &lt;video&gt; tag. For example, this screen recording
-    Prof. Cody Dunne made of Mike Bostock's flexible transitions in D3 slide:</p>
-
-  <video controls width='100%'>
-    <source src='http://www.ccs.neu.edu/home/cody/courses/shared/d3-flexible-transitions.mp4'
-            type='video/mp4'>
-    <p>Your browser doesn't support HTML5 video. Here is
-      a <a href='http://www.ccs.neu.edu/home/cody/courses/shared/d3-flexible-transitions.mp4'>link
-        to the video</a> instead.</p>
-  </video>
-
-  <h1>Visualization explanation</h1>
-
-  <p>Replace with a brief explanation (can be copied from the paper) and linked presentation
-    slides.</p>
-
-  <h1>Acknowledgments</h1>
-
-  <p>
-    List here where any code, packages/libraries, text, images, designs, etc. that you leverage come
-    from.
-  </p>
-
-  <ul>
-    <li><a href='https://d3js.org/'>
-      D3: Data-Driven Documents</a>
-      by Mike Bostock is used for manipulating the DOM to create visualizations.
-    </li>
-    <li><a href='https://codepo8.github.io/css-fork-on-github-ribbon/#'>
-      Pure CSS responsive 'Fork me on GitHub' ribbon</a>
-      by Chris Heilmann is used to create the banner that links back to the source code repository.
-    </li>
-    <li><a href='https://www.d3-graph-gallery.com/graph/wordcloud_size.html'>
-      Wordcloud with proportional font size in d3.js</a>
-      by D3.js Graph Gallery and is used to create the wordswarm.
-    </li>
-    <li><a href='https://blockbuilder.org/bricedev/8b2da06ddef27d94cde9'>
-      Word Cloud </a>
-      by blockbuilder.org and is used to create the wordswarm.
-    </li>
+  </div>
 
 
-  </ul>
-</div>
+  <!-- Further writeup -->
+  <div class = 'content-column'>
 
-<!-- Scripts at the end avoid need for dealing with async, defer, or onload event handlers -->
-<script src='lib/d3.v6.1.1/d3.min.js'></script>
-<script src='js/visualization.js'></script>
+    <h1>Demo Video</h1>
+    
+    <p>Embed an MP4 demo video using the HTML5 &lt;video&gt; tag. For example, this screen recording Prof. Cody Dunne made of Mike Bostock's flexible transitions in D3 slide:</p>
+    
+    <video controls width='100%'>
+      <source src='http://www.ccs.neu.edu/home/cody/courses/shared/d3-flexible-transitions.mp4' type='video/mp4'>
+      <p>Your browser doesn't support HTML5 video. Here is
+       a <a href='http://www.ccs.neu.edu/home/cody/courses/shared/d3-flexible-transitions.mp4'>link to the video</a> instead.</p>
+    </video>
+
+    <h1>Visualization explanation</h1>
+    
+    <p>Replace with a brief explanation (can be copied from the paper) and linked presentation slides.</p>
+    
+    <h1>Acknowledgments</h1>
+
+    <p>
+      List here where any code, packages/libraries, text, images, designs, etc. that you leverage come from.
+    </p>
+
+    <ul>
+      <li><a href='https://d3js.org/'>
+        D3: Data-Driven Documents</a>
+        by Mike Bostock is used for manipulating the DOM to create visualizations.
+      </li>
+      <li><a href='https://codepo8.github.io/css-fork-on-github-ribbon/#'>
+        Pure CSS responsive 'Fork me on GitHub' ribbon</a>
+        by Chris Heilmann is used to create the banner that links back to the source code repository.
+      </li>
+    </ul>
+  </div>
+  
+  <!-- Scripts at the end avoid need for dealing with async, defer, or onload event handlers -->
+  <script src='lib/d3.v6.1.1/d3.min.js'></script>
+  <!-- Load the line.js file -->
+  <script src='js/linechart.js'></script>
+	
 </body>
 </html>
