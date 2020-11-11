@@ -6,7 +6,7 @@ function lineChart(data){
     var minDate  = d3.min(data, function(d){return d.date; });
     var maxCount = d3.max(data, function(d){return d.count;});
 
-    var width  = 2000;
+    var width  = 1500;
     var height = 500;
     var margin = {
         top: 30,
