@@ -1,14 +1,17 @@
 d3.json('data/keywords.json').then(data => {
   
+  // graph sizes
   let width = 700
   let height = 700
 
+  // add svg to vis2
   let svg = d3.select("#vis2")
     .append("svg")
     .attr("width", width)
     .attr("height", height)
     .style('background', '#efefef');
 
+  // append the title
   svg.append("text")
   .attr("x", (width / 2))             
   .attr("y", 50)
@@ -17,7 +20,7 @@ d3.json('data/keywords.json').then(data => {
   .style("text-decoration", "underline")  
   .text("Word Cloud on UberPeople.net");
 
-
+  // all the bubbles(nodes) of the json
   let node = svg.append("g")
   .selectAll("circle")
   .data(data)
@@ -31,6 +34,7 @@ d3.json('data/keywords.json').then(data => {
     .style("fill-opacity", 0.3)
     .attr("stroke", "#6B97EE")
 
+  // all the keyword labels of the json
   let text = svg.select("g")
     .selectAll("text")
     .data(data)
@@ -40,13 +44,14 @@ d3.json('data/keywords.json').then(data => {
       .attr("dy", height / 2)
       .text(d => d.keywords)
 
+  // force usage referenced from Yan Holtz
+  // to move the bubbles on initiation
   let simulation = d3.forceSimulation()
     .force("center", d3.forceCenter().x(width / 2).y(height / 2)) // Attraction to the center of the svg area
     .force("charge", d3.forceManyBody().strength(0.5)) // Nodes are attracted one each other of value is > 0
     .force("collide", d3.forceCollide().strength(.01).radius(60).iterations(1)) // Force that avoids circle overlapping
 
-// Apply these forces to the nodes and update their positions.
-// Once the force algorithm is happy with positions ('alpha' value is low enough), simulations will stop.
+// Apply these forces to the nodes/text and update their positions.
 simulation
     .nodes(data)
     .on("tick", function(d){
