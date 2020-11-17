@@ -1,13 +1,22 @@
 d3.json('data/keywords.json').then(data => {
   
-  let width = 900
-  let height = 900
+  let width = 700
+  let height = 700
 
   let svg = d3.select("#vis2")
     .append("svg")
     .attr("width", width)
     .attr("height", height)
     .style('background', '#efefef');
+
+  svg.append("text")
+  .attr("x", (width / 2))             
+  .attr("y", 50)
+  .attr("text-anchor", "middle")  
+  .style("font-size", "16px") 
+  .style("text-decoration", "underline")  
+  .text("Word Cloud on UberPeople.net");
+
 
   let node = svg.append("g")
   .selectAll("circle")
