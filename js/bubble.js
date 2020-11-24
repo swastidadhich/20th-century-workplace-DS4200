@@ -34,12 +34,32 @@ d3.json('data/keywords.json').then(data => {
   .style("fill-opacity", 0.3)
   .attr("stroke", "#6B97EE")
   .on('click', (event, d) => {
+    console.log("hello");
     if (!d3.select(event.currentTarget).classed('selected')) {
       d3.select(event.currentTarget).classed('selected', false)
     } else {
       d3.select(event.currentTarget).classed('selected', false);
     }
   })
+
+  .on('mouseover', (event, d) => {
+    console.log("hello");
+    if (!d3.select(event.currentTarget).classed('selected')) {
+      d3.select(event.currentTarget).classed('selected', true)
+    } else if (d3.select(event.currentTarget).classed('selected')) {
+      d3.select(event.currentTarget).classed('selected', true)
+    }
+    ;
+  })
+
+  .on('mouseout', (event, d) => {
+    if (d3.select(event.currentTarget).classed('selected')) {
+      d3.select(event.currentTarget).classed('selected', true)
+    } else if (d3.select(event.currentTarget).classed('selected')) {
+      d3.select(event.currentTarget).classed('selected', false)
+    }
+    ;
+  })s
 
   // all the keyword labels of the json
   let text = svg.select("g")
@@ -80,23 +100,5 @@ d3.json('data/keywords.json').then(data => {
     })
   })
 
-  .on('mouseover', (event, d) => {
-    console.log("hello");
-    if (!d3.select(event.currentTarget).classed('selected')) {
-      d3.select(event.currentTarget).classed('selected', true)
-    } else if (d3.select(event.currentTarget).classed('selected')) {
-      d3.select(event.currentTarget).classed('selected', true)
-    }
-    ;
-  })
-
-  .on('mouseout', (event, d) => {
-    if (d3.select(event.currentTarget).classed('selected')) {
-      d3.select(event.currentTarget).classed('selected', true)
-    } else if (d3.select(event.currentTarget).classed('selected')) {
-      d3.select(event.currentTarget).classed('selected', false)
-    }
-    ;
-  })
 
 });
