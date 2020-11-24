@@ -59,7 +59,7 @@ d3.json('data/keywords.json').then(data => {
       d3.select(event.currentTarget).classed('selected', false)
     }
     ;
-  })s
+  })
 
   // all the keyword labels of the json
   let text = svg.select("g")
@@ -99,6 +99,4 @@ d3.json('data/keywords.json').then(data => {
       return d.y;
     })
   })
-
-
 });
