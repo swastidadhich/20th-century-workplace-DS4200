@@ -26,40 +26,40 @@ d3.json('data/keywords.json').then(data => {
   .data(data)
   .enter()
   .append("circle")
-  .attr('id', d => d.keywords)
-  .attr("r", d => d.count / 60)
-  .attr("cx", width / 2)
-  .attr("cy", height / 2)
-  .style("fill", "#69b3a2")
-  .style("fill-opacity", 0.3)
-  .attr("stroke", "#6B97EE")
-  .on('click', (event, d) => {
-    console.log("hello");
-    if (!d3.select(event.currentTarget).classed('selected')) {
-      d3.select(event.currentTarget).classed('selected', false)
-    } else {
-      d3.select(event.currentTarget).classed('selected', false);
+    .attr('id', d => d.keywords)
+    .attr("r", d => d.count / 60)
+    .attr("cx", width / 2)
+    .attr("cy", height / 2)
+    .style("fill", "#69b3a2")
+    .style("fill-opacity", 0.3)
+    .attr("stroke", "#6B97EE")
+  
+    .on('click', (event, d) => {
+     console.log("hello");
+      if (!d3.select(event.currentTarget).classed('selected')) {
+        d3.select(event.currentTarget).classed('selected', true)
+      } else {
+        d3.select(event.currentTarget).classed('selected', false);
     }
   })
 
-  .on('mouseover', (event, d) => {
-    console.log("hello");
-    if (!d3.select(event.currentTarget).classed('selected')) {
-      d3.select(event.currentTarget).classed('selected', true)
-    } else if (d3.select(event.currentTarget).classed('selected')) {
-      d3.select(event.currentTarget).classed('selected', true)
-    }
-    ;
-  })
+  // .on('mouseover', (event, d) => {
+  //   console.log("hello");
+  //   if (!d3.select(event.currentTarget).classed('selected')) {
+  //     d3.select(event.currentTarget).classed('selected', true)
+  //   } else if (d3.select(event.currentTarget).classed('selected')) {
+  //     d3.select(event.currentTarget).classed('selected', true)
+  //   }
+  //   ;
+  // })
 
-  .on('mouseout', (event, d) => {
-    if (d3.select(event.currentTarget).classed('selected')) {
-      d3.select(event.currentTarget).classed('selected', true)
-    } else if (d3.select(event.currentTarget).classed('selected')) {
-      d3.select(event.currentTarget).classed('selected', false)
-    }
-    ;
-  })
+  // .on('mouseout', (event, d) => {
+  //   if (d3.select(event.currentTarget).classed('selected')) {
+  //     d3.select(event.currentTarget).classed('selected', true)
+  //   } else if (d3.select(event.currentTarget).classed('selected')) {
+  //     d3.select(event.currentTarget).classed('selected', false)
+  //   };
+  // })
 
   // all the keyword labels of the json
   let text = svg.select("g")
