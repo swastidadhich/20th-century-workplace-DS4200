@@ -1,7 +1,7 @@
 {
   "nodes": [
     {"id": "covid", "group": "root"},
-    {"id": "health insurace", "group": "root"},
+    {"id": "health insurance", "group": "root"},
     {"id": "car insurance", "group": "root"},
     {"id": "minimum wage", "group": "root"},
     {"id": "long hours", "group": "root"},
@@ -15,27 +15,46 @@
     {"id": "racism", "group": "root"},
     {"id": "tipping", "group": "root"},
     {"id": "issue", "group": "root"},
-    {"id": "test1", "group": "subroot"},
-    {"id": "test2", "group": "subroot"},
-    {"id": "test3", "group": "subroot"}    
+
+    {"id": "health", "group": "subroot"},
+    {"id": "mask", "group": "subroot"},
+    {"id": "testing", "group": "subroot"},
+
+    {"id": "pickup", "group": "subroot"},
+
+    {"id": "violence", "group": "subroot"},
+    {"id": "late night", "group": "subroot"}
+
   ],
   "links": [
-    {"source": "covid", "target": "test1", "value": 10},
-    {"source": "covid", "target": "test1", "value": 8},
-    {"source": "covid", "target": "test1", "value": 10},
-    {"source": "covid", "target": "test2", "value": 5},
-    {"source": "uberEats", "target": "test2", "value": 2},
-    {"source": "uberEats", "target": "test2", "value": 7},
-    {"source": "uberEats", "target": "test2", "value": 5},
-    {"source": "assault", "target": "test1", "value": 2},
-    {"source": "assault", "target": "test1", "value": 2},
-    {"source": "assault", "target": "test2", "value": 1},
-    {"source": "tipping", "target": "test1", "value": 1},
-    {"source": "tipping", "target": "test2", "value": 4},
-    {"source": "tipping", "target": "test1", "value": 3},
-    {"source": "safety", "target": "test3", "value": 2},
-    {"source": "safety", "target": "test3", "value": 6},
-    {"source": "safety", "target": "test3", "value": 1},
-    {"source": "safety", "target": "test3", "value": 1}
+    {"source": "covid", "target": "health", "value": 10},
+    {"source": "covid", "target": "mask", "value": 8},
+    {"source": "covid", "target": "testing", "value": 10},
+    {"source": "covid", "target": "uberEats", "value": 5},
+
+    {"source": "uberEats", "target": "covid", "value": 2},
+    {"source": "uberEats", "target": "tipping", "value": 7},
+    {"source": "uberEats", "target": "pickup", "value": 5},
+
+    {"source": "assault", "target": "safety", "value": 2},
+    {"source": "assault", "target": "issue", "value": 2},
+    {"source": "assault", "target": "violence", "value": 1},
+
+    {"source": "tipping", "target": "ride hail", "value": 1},
+    {"source": "tipping", "target": "minimum wage", "value": 4},
+    {"source": "tipping", "target": "ride hail", "value": 3},
+
+    {"source": "safety", "target": "late night", "value": 2},
+    {"source": "safety", "target": "mask", "value": 6},
+    
+    {"source": "health safety", "target": "health insurance", "value": 1},
+    {"source": "assault", "target": "racism", "value": 1},
+    {"source": "health safety", "target": "health", "value": 1},
+    
+    {"source": "pandemic", "target": "health insurance", "value": 1},
+    {"source": "pandemic", "target": "mask", "value": 1},
+    {"source": "car insurance", "target": "health insurance", "value": 1},
+
+    {"source": "long hours", "target": "minimum wage", "value": 1}
   ]
 }

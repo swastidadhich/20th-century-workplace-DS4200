@@ -33,6 +33,7 @@ d3.json("data/graph.json").then(data => {
     .enter().append("g")
     
   var circles = node.append("circle")
+      .attr('id', d => d.id)
       .attr("r", 10)
       .attr("fill", function(d) { 
         if (d.group == "root") {
@@ -77,6 +78,8 @@ d3.json("data/graph.json").then(data => {
           return "translate(" + d.x + "," + d.y + ")";
         })
   }
+
+
 
 
 
