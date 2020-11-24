@@ -21,6 +21,18 @@ h1, h2, h3 {
   height: 100%;
 }
 
+.vis-holder2 {
+  width: 50%;
+  height: 100%;
+  float: left;
+}
+
+.vis-holder3 {
+  width: 50%;
+  height: 100%;
+  float: left;
+}
+
 .vis-svg {
   background-color: #f4f1f0;
 }
