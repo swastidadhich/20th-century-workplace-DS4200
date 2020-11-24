@@ -11,6 +11,14 @@ d3.json("data/graph.json").then(data => {
   .attr("height", height)
   .style('background', '#efefef');
 
+  svg.append("text")
+  .attr("x", (width / 2))
+  .attr("y", 50)
+  .attr("text-anchor", "middle")
+  .style("font-size", "16px")
+  .style("text-decoration", "underline")
+  .text("Most Common Keyword Links on UberPeople.net");
+
   var link = svg.append("g")
       .attr("class", "links")
     .selectAll("line")
