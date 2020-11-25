@@ -53,6 +53,23 @@ d3.json('data/main.json').then(data => {
         dispatcher.call('selector', this, svg.selectAll('.selected').data());
     }
   })
+     .on('mouseover', (event, d) => {
+    console.log("hello");
+    if (!d3.select(event.currentTarget).classed('selected')) {
+      d3.select(event.currentTarget).classed('selected', true)
+    } else if (d3.select(event.currentTarget).classed('selected')) {
+      d3.select(event.currentTarget).classed('selected', true)
+    }
+    ;
+  })
+
+  .on('mouseout', (event, d) => {
+    if (d3.select(event.currentTarget).classed('selected')) {
+      d3.select(event.currentTarget).classed('selected', true)
+    } else if (d3.select(event.currentTarget).classed('selected')) {
+      d3.select(event.currentTarget).classed('selected', false)
+    };
+  })
 
     // all the keyword labels of the json
   let text = svg.select("g")
@@ -65,23 +82,7 @@ d3.json('data/main.json').then(data => {
     .text(d => d.id)
 
 
-  // .on('mouseover', (event, d) => {
-  //   console.log("hello");
-  //   if (!d3.select(event.currentTarget).classed('selected')) {
-  //     d3.select(event.currentTarget).classed('selected', true)
-  //   } else if (d3.select(event.currentTarget).classed('selected')) {
-  //     d3.select(event.currentTarget).classed('selected', true)
-  //   }
-  //   ;
-  // })
-
-  // .on('mouseout', (event, d) => {
-  //   if (d3.select(event.currentTarget).classed('selected')) {
-  //     d3.select(event.currentTarget).classed('selected', true)
-  //   } else if (d3.select(event.currentTarget).classed('selected')) {
-  //     d3.select(event.currentTarget).classed('selected', false)
-  //   };
-  // })
+ 
 
 
   // force usage referenced from Yan Holtz
