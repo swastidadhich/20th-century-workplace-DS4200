@@ -87,10 +87,6 @@ d3.json('data/main.json').then(data => {
     .attr("dy", height / 2)
     .text(d => d.id)
 
-
- 
-
-
   // force usage referenced from Yan Holtz
   // to move the bubbles on initiation
   let simulation = d3.forceSimulation()

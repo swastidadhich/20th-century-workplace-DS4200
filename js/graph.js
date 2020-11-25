@@ -13,6 +13,7 @@ d3.json("data/main.json").then(data => {
   .attr("height", height)
   .style('background', '#efefef');
 
+  // title
   svg.append("text")
   .attr("x", (width / 2))
   .attr("y", 50)
@@ -21,19 +22,20 @@ d3.json("data/main.json").then(data => {
   .style("text-decoration", "underline")
   .text("Most Common Keyword Links on UberPeople.net");
 
+  // all the lines
   var link = svg.append("g")
       .attr("class", "links")
     .selectAll("line")
     .data(data.links)
     .enter().append("line")
       .attr("stroke-width", function(d) { return Math.sqrt(d.value); });
-
+  // all the node objects
   var node = svg.append("g")
       .attr("class", "nodes")
     .selectAll("g")
     .data(data.nodes)
     .enter().append("g")
-    
+  // all the circles in the node  
   var circles = node.append("circle")
       .attr('id', d => d.id)
       .attr("r", 10)
@@ -45,7 +47,7 @@ d3.json("data/main.json").then(data => {
           return "#bc6bee"
         }
       })
-
+  // text labels of nodes
   var labels = node.append("text")
       .text(function(d) {
         return d.id;
@@ -56,6 +58,7 @@ d3.json("data/main.json").then(data => {
   node.append("title")
       .text(function(d) { return d.id; });
 
+  // force simulation to push the nodes and links apart
   var simulation = d3.forceSimulation()
     .force("link", d3.forceLink().id(function(d) { return d.id; }))
     .force("charge", d3.forceManyBody())
@@ -68,6 +71,7 @@ d3.json("data/main.json").then(data => {
   simulation.force("link")
       .links(data.links);
 
+  // on tick function
   function ticked() {
     link
         .attr("x1", function(d) { return d.source.x; })
@@ -80,7 +84,7 @@ d3.json("data/main.json").then(data => {
           return "translate(" + d.x + "," + d.y + ")";
         })
   }
-
+  
   dispatcher.on('selection', function(d) {
     console.log('hello world')
 });
