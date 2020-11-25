@@ -3,7 +3,7 @@ d3.json('data/main.json').then(data => {
   // graph sizes
   let width = 700
   let height = 700
-  var dispatcher = d3.dispatch("selector")
+  var dispatcher = d3.dispatch("selection")
 
   // add svg to vis2
   let svg = d3.select("#vis2")
@@ -45,23 +45,26 @@ d3.json('data/main.json').then(data => {
     
       if (!d3.select(event.currentTarget).classed('selected')) {
         d3.select(event.currentTarget).classed('selected', true)
-
+        dispatcher.call('selection', this, svg.selectAll('.selected').data());
         // dispatch call here
         
 
       } else {
         d3.select(event.currentTarget).classed('selected', false)
+        dispatcher.call('selection', this, svg.selectAll('.selected').data());
         // dispatch call here
     }
   })
      .on('mouseover', (event, d) => {
-    console.log("hello");
+    
     if (!d3.select(event.currentTarget).classed('selected')) {
       d3.select(event.currentTarget).classed('selected', true)
+      dispatcher.call('selection', this, svg.selectAll('.selected').data());
       // dispatch call here
 
     } else if (d3.select(event.currentTarget).classed('selected')) {
       d3.select(event.currentTarget).classed('selected', true)
+      dispatcher.call('selection', this, svg.selectAll('.selected').data());
       // dispatch call here
     }
     ;
@@ -70,9 +73,11 @@ d3.json('data/main.json').then(data => {
   .on('mouseout', (event, d) => {
     if (d3.select(event.currentTarget).classed('selected')) {
       d3.select(event.currentTarget).classed('selected', true)
+      dispatcher.call('selection', this, svg.selectAll('.selected').data());
       // dispatch call here
     } else if (d3.select(event.currentTarget).classed('selected')) {
       d3.select(event.currentTarget).classed('selected', false)
+      dispatcher.call('selection', this, svg.selectAll('.selected').data());
       // dispatch call here
     };
   })

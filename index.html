@@ -43,7 +43,7 @@
 
     <h1>Abstract</h1>
 
-    <p>Professor Hilary Robinson and her team are conducting an interdisciplinary study of the issues arising from the arrival of the algorithmic workplace in the United States. This area is particularly interesting due to “the emergence of digital platforms in the economy that is rapidly transforming economic activity”. The research will develop new evidence about the workers, organizations, and government institutions involved in the ”algorithmic workplace”. We aim to create visualizations for the research team to explain the data to the general public.</p>
+    <p>Professor Hilary Robinson and her team are conducting an interdisciplinary study of the issues arising from the arrival of the algorithmic workplace in the United States. This area is particularly interesting due to “the emergence of digital platforms in the economy that is rapidly transforming economic activity”. The research will develop new evidence about the workers, organizations, and government institutions involved in the ”algorithmic workplace”. We aim to create visualizations for the research team to explain the data to the general public. The data was collected from UberPeople.net which is an online public forum for Uber drivers. By looking at the posts on UberPeople.net the research team hopes to gain insight into the issues that algorithmic workplace employees are facing.</p>
 
 
     <h1>Visualization</h1>
@@ -70,15 +70,18 @@
 
     <h1>Visualization explanation</h1>
 
-    <p>We chose to use a line graph to display the frequency of a word over time. The tilt can help explain the slope of how much of an increase or decrease this specific issue is over time.
-This visualization represents days of the month (October) and the y axis represents the count which represents frequency. And on the x axis we have the days (time) and on the y axis we have the associated frequencies of posts. The line graph makes it easier to observe the trend, i.e. to see whether or not the number of those posts increase or decrease. This visualization will be expanded towards all the date ranges in the JSON dataset. Currently showing only October 2018 from a partial subset of the main dataset.</p>
+    <p>We chose to use a line graph to display the frequency of posts over time. The tilt can help explain the slope of how much of an increase or decrease this specific issue is over time. This visualization represents days of the month (October) and the y axis represents the count which represents frequency. And on the x axis we have the days (time) and on the y axis we have the associated frequencies of posts. The line graph makes it easier to observe the trend, i.e. to see whether or not the number of those posts increase or decrease. This visualization will be expanded towards all the date ranges in the JSON dataset. Currently showing only October 2018 from a partial subset of the main dataset.</p>
 
 
-<p> We created a bubble graph through D3. We used a size encoding based on the area of each 
-  circle corresponding to the frequency of how many times that word is used in the posts.
-  Currently, the graph is a static graph; however, we plan to implement brushing and
-  linking to the other views later on in the assignment. The next step will be to implement
-  a network tree graph, which will brush and link with the bubble graph. </p>
+    <p> We created a bubble graph through D3. We used a size encoding based on the area of each circle corresponding to the frequency of how many times that word is used in the posts. Currently, the graph is a static graph; however, we plan to implement brushing and linking to the other views later on in the assignment. </p>
+
+    <p>
+      We also created a network graph to show the relationships of topics and keywords of all the posts. We hope that this graph will help show how some issues may be connected and how some issues may be disconnected. In solving an issue for one problem, it is important to see the bigger picture and how that problem can affect other areas. There is a positional encoding for the lines that connect the data together.
+    </p>
+
+    <p>
+      The brushing feature is available on the bubble graph, where the user can mouse over the keyword to select them. By selecting the keywords, the user will link the selection to node on the network graph. In the network graph, the user will be able to see the root node(the selected keywords) and its immediate links or connections.
+    </p>
 
     <h1>Acknowledgments</h1>
 
@@ -87,7 +90,10 @@ This visualization represents days of the month (October) and the y axis represe
     </p>
 
     <ul>
-
+      <li>
+        Network Graph <a href='https://bl.ocks.org/heybignick/3faf257bbbbc7743bb72310d03b86ee8'>
+        (Link)</a> by heybignick. The template is referenced for the network  graph knowledge as well as using d3.force to build the network algorithm.
+      </li>
       <li>
         Most basic circular packing <a href='https://www.d3-graph-gallery.com/graph/circularpacking_basic.html'>
         (Link)</a> by Yan Holtz. The template is referenced for basic bubble graph knowledge as well as using d3.force to push the bubbles apart.
