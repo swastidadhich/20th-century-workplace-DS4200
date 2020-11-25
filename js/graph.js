@@ -1,4 +1,6 @@
-d3.json("data/graph.json").then(data => {
+let dispatcher = d3.dispatch("selection")
+
+d3.json("data/main.json").then(data => {
 
   // graph sizes
   let width = 700
@@ -78,6 +80,10 @@ d3.json("data/graph.json").then(data => {
           return "translate(" + d.x + "," + d.y + ")";
         })
   }
+
+  dispatcher.on("selection", function(d) {
+    console.log('hello')
+  });
 
 
 

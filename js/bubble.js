@@ -1,8 +1,9 @@
-d3.json('data/keywords.json').then(data => {
+d3.json('data/main.json').then(data => {
 
   // graph sizes
   let width = 700
   let height = 700
+  let dispatcher = d3.dispatch("selection")
 
   // add svg to vis2
   let svg = d3.select("#vis2")
@@ -23,11 +24,18 @@ d3.json('data/keywords.json').then(data => {
   // all the bubbles(nodes) of the json
   let node = svg.append("g")
   .selectAll("circle")
-  .data(data)
+  .data(data.nodes)
   .enter()
   .append("circle")
-    .attr('id', d => d.keywords)
-    .attr("r", d => d.count / 60)
+    .attr('id', d => d.id)
+    .attr("r", 
+      d => {
+        if (isNaN(d.count)){
+        return 0
+      }
+      else{
+        return d.count / 60 
+      }})
     .attr("cx", width / 2)
     .attr("cy", height / 2)
     .style("fill", "#69b3a2")
@@ -35,11 +43,13 @@ d3.json('data/keywords.json').then(data => {
     .attr("stroke", "#6B97EE")
   
     .on('click', (event, d) => {
-     console.log("hello");
+    
       if (!d3.select(event.currentTarget).classed('selected')) {
         d3.select(event.currentTarget).classed('selected', true)
+        dispatcher.call('selection', this, svg.selectAll('.selected').data())
       } else {
-        d3.select(event.currentTarget).classed('selected', false);
+        d3.select(event.currentTarget).classed('selected', false)
+        dispatcher.call('selection', this, svg.selectAll('.selected').data());
     }
   })
 
@@ -64,12 +74,17 @@ d3.json('data/keywords.json').then(data => {
   // all the keyword labels of the json
   let text = svg.select("g")
   .selectAll("text")
-  .data(data)
+  .data(data.nodes)
   .enter()
   .append("text")
   .attr("dx", width / 2)
   .attr("dy", height / 2)
-  .text(d => d.keywords)
+  .text(d => {if (d.group == 'subroot') {
+    return ""
+  }
+  else{
+    return d.id
+  }})
 
   // force usage referenced from Yan Holtz
   // to move the bubbles on initiation
@@ -82,7 +97,7 @@ d3.json('data/keywords.json').then(data => {
 
 // Apply these forces to the nodes/text and update their positions.
   simulation
-  .nodes(data)
+  .nodes(data.nodes)
   .on("tick", function (d) {
     node
     .attr("cx", function (d) {
