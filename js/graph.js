@@ -1,4 +1,4 @@
-let dispatcher = d3.dispatch("selection")
+var dispatcher = d3.dispatch('selection')
 
 d3.json("data/main.json").then(data => {
 
@@ -46,7 +46,7 @@ d3.json("data/main.json").then(data => {
         }
       })
 
-  var lables = node.append("text")
+  var labels = node.append("text")
       .text(function(d) {
         return d.id;
       })
@@ -81,12 +81,8 @@ d3.json("data/main.json").then(data => {
         })
   }
 
-  dispatcher.on("selection", function(d) {
-    console.log('hello')
-  });
-
-
-
-
+  dispatcher.on('selection', function(d) {
+    console.log('hello world')
+});
 
 });

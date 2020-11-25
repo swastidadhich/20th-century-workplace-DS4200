@@ -3,7 +3,7 @@ d3.json('data/main.json').then(data => {
   // graph sizes
   let width = 700
   let height = 700
-  let dispatcher = d3.dispatch("selection")
+  var dispatcher = d3.dispatch("selector")
 
   // add svg to vis2
   let svg = d3.select("#vis2")
@@ -31,7 +31,7 @@ d3.json('data/main.json').then(data => {
     .attr("r", 
       d => {
         if (isNaN(d.count)){
-        return 0
+        return 5
       }
       else{
         return d.count / 60 
@@ -41,17 +41,29 @@ d3.json('data/main.json').then(data => {
     .style("fill", "#69b3a2")
     .style("fill-opacity", 0.3)
     .attr("stroke", "#6B97EE")
-  
     .on('click', (event, d) => {
     
       if (!d3.select(event.currentTarget).classed('selected')) {
         d3.select(event.currentTarget).classed('selected', true)
-        dispatcher.call('selection', this, svg.selectAll('.selected').data())
+        dispatcher.call('selector', this, svg.selectAll('.selected').data())
+        console.log(svg.selectAll('.selected').data())
+
       } else {
         d3.select(event.currentTarget).classed('selected', false)
-        dispatcher.call('selection', this, svg.selectAll('.selected').data());
+        dispatcher.call('selector', this, svg.selectAll('.selected').data());
     }
   })
+
+    // all the keyword labels of the json
+  let text = svg.select("g")
+    .selectAll("text")
+    .data(data.nodes)
+    .enter()
+    .append("text")
+    .attr("dx", width / 2)
+    .attr("dy", height / 2)
+    .text(d => d.id)
+
 
   // .on('mouseover', (event, d) => {
   //   console.log("hello");
@@ -71,20 +83,6 @@ d3.json('data/main.json').then(data => {
   //   };
   // })
 
-  // all the keyword labels of the json
-  let text = svg.select("g")
-  .selectAll("text")
-  .data(data.nodes)
-  .enter()
-  .append("text")
-  .attr("dx", width / 2)
-  .attr("dy", height / 2)
-  .text(d => {if (d.group == 'subroot') {
-    return ""
-  }
-  else{
-    return d.id
-  }})
 
   // force usage referenced from Yan Holtz
   // to move the bubbles on initiation
