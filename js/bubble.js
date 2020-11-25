@@ -45,20 +45,24 @@ d3.json('data/main.json').then(data => {
     
       if (!d3.select(event.currentTarget).classed('selected')) {
         d3.select(event.currentTarget).classed('selected', true)
-        dispatcher.call('selector', this, svg.selectAll('.selected').data())
-        console.log(svg.selectAll('.selected').data())
+
+        // dispatch call here
+        
 
       } else {
         d3.select(event.currentTarget).classed('selected', false)
-        dispatcher.call('selector', this, svg.selectAll('.selected').data());
+        // dispatch call here
     }
   })
      .on('mouseover', (event, d) => {
     console.log("hello");
     if (!d3.select(event.currentTarget).classed('selected')) {
       d3.select(event.currentTarget).classed('selected', true)
+      // dispatch call here
+
     } else if (d3.select(event.currentTarget).classed('selected')) {
       d3.select(event.currentTarget).classed('selected', true)
+      // dispatch call here
     }
     ;
   })
@@ -66,8 +70,10 @@ d3.json('data/main.json').then(data => {
   .on('mouseout', (event, d) => {
     if (d3.select(event.currentTarget).classed('selected')) {
       d3.select(event.currentTarget).classed('selected', true)
+      // dispatch call here
     } else if (d3.select(event.currentTarget).classed('selected')) {
       d3.select(event.currentTarget).classed('selected', false)
+      // dispatch call here
     };
   })
 
