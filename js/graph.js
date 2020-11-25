@@ -39,14 +39,17 @@ d3.json("data/main.json").then(data => {
   var circles = node.append("circle")
       .attr('id', d => d.id)
       .attr("r", 10)
-      .attr("fill", function(d) { 
-        if (d.group == "root") {
-          return "#69b3a2"
-        }
-        else {
-          return "#bc6bee"
-        }
-      })
+      .attr("fill", "#69b3a2")
+
+  // function(d) { 
+  //       if (d.group == "root") {
+  //         return "#69b3a2"
+  //       }
+  //       else {
+  //         return "#bc6bee"
+  //       }
+  //     }
+
   // text labels of nodes
   var labels = node.append("text")
       .text(function(d) {
