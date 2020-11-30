@@ -19,18 +19,57 @@ h1, h2, h3 {
 .vis-holder {
   width: 100%;
   height: 100%;
+  display: flex;
 }
+
+.bubblechart-holder {
+	flex: 0 0 50%;
+  }
+
+.selected {
+	opacity: 1 !important;
+	stroke: black;
+	stroke-width: .5px;
+	fill: #ff7575 !important;
+}
+
+/* Style for the line path*/
+.linePath {
+  fill: none;
+  stroke: black;
+  stroke-width: 1;
+}
+
+.network-holder {
+flex: 1;
+}
+
+.links line {
+  stroke: #999;
+  stroke-opacity: 0.6;
+}
+
+.nodes circle {
+  stroke: #fff;
+  stroke-width: 0px;
+}
+
 
 .vis-holder2 {
-  width: 50%;
+  width: 100%;
   height: 100%;
-  float: left;
+  display: block;
+  margin: auto;
 }
 
-.vis-holder3 {
-  width: 50%;
-  height: 100%;
-  float: left;
+.line {
+	fill: none;
+	stroke-width: 2.5px;
+	display: none;
+}
+
+.show {
+	display: block;
 }
 
 .vis-svg {

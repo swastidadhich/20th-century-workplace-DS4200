@@ -1,123 +1,160 @@
-d3.json('data/main.json').then(data => {
+function graphBubble() {
 
-  // graph sizes
-  let width = 700
-  let height = 700
-  var dispatcher = d3.dispatch("selection")
+    let margin = {
+        top: 0,
+        left: 50,
+        right: 30,
+        bottom: 35
+      },
+      ourBrush = null,
+      selectableElements = d3.select(null),
+      dispatcher,
+      svg;
 
-  // add svg to vis2
-  let svg = d3.select("#vis2")
-  .append("svg")
-  .attr("width", width)
-  .attr("height", height)
-  .style('background', '#efefef');
+    function chart(selector, dataFromCsv) {
 
-  // append the title
-  svg.append("text")
-  .attr("x", (width / 2))
-  .attr("y", 50)
-  .attr("text-anchor", "middle")
-  .style("font-size", "16px")
-  .style("text-decoration", "underline")
-  .text("Word Cloud on UberPeople.net");
+        // set the data as children for d3.pack
+        let dataset = {
+            "children": dataFromCsv
+        }
 
-  // all the bubbles(nodes) of the json
-  let node = svg.append("g")
-  .selectAll("circle")
-  .data(data.nodes)
-  .enter()
-  .append("circle")
-    .attr('id', d => d.id)
-    .attr("r", 
-      d => {
-        if (isNaN(d.count)){
-        return 5
-      }
-      else{
-        return d.count / 60 
-      }})
-    .attr("cx", width / 2)
-    .attr("cy", height / 2)
-    .style("fill", "#69b3a2")
-    .style("fill-opacity", 0.3)
-    .attr("stroke", "#6B97EE")
-    .on('click', (event, d) => {
-    
-      if (!d3.select(event.currentTarget).classed('selected')) {
-        d3.select(event.currentTarget).classed('selected', true)
-        dispatcher.call('selection', this, svg.selectAll('.selected').data());
-        // dispatch call here
+        // the diameter of the bubbles for d3.pack
+        let diameter = 200; 
+
+          // d3.pack to create bubbles algorithm
+          let bubble = d3.pack(dataset)
+            .size([diameter, diameter])
+            .padding(1.5);
+
+            // append the svg that we will draw on
+            svg = d3.select(selector)
+            .append('svg')
+              .attr('preserveAspectRatio', 'xMidYMid meet')
+              .attr('viewBox', [50, 0, 205, 250].join(' '))
+              .classed('svg-content', true)
+      
+            svg = svg.append('g')
+              .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+
+              // title
+              svg.append("text") 
+                .attr("y", 10)
+                .attr("x", 100)
+                .attr("text-anchor", "middle")
+                .style("font-size", "4px")
+                .style("text-decoration", "underline")
+                .attr('margin-bottom', 200)
+                .text("Most Used Keywords on UberPeople.net")
+                .style("fill", "rgb(0, 0, 0)")
+
+            // all the bubbles in the graph
+            let nodes = d3.hierarchy(dataset)
+            .sum(function(d) { 
+                return d.count; });
+
+            // individual nodes
+            let node = svg.selectAll(".node")
+            .data(bubble(nodes).descendants())
+            .enter()
+            .filter(function(d){
+                return  !d.children
+            })
+
+
+            .append("g")
+            .attr("class", "node")
+            .attr("transform", function(d) {
+                return `translate(${d.x}, ${d.y + 8})`
+            })
+            .attr("cx", 410).attr("cy", 190)
+
+
+            // add the actual circles
+            node.append("circle")
+            .attr("r", function(d) {
+                return d.r;
+            })
+            .style("fill", "#1BBBDE")
+
+            // append the keywords inside the circle
+            node.append("text")
+            .style("text-anchor", "middle")
+            .text(function(d) {
+                return d.data.keywords;
+            })
+            .attr("font-family", "sans-serif")
+            .attr("font-size", function(d){
+                return d.r/3; // font size is 1/3 radius
+            })
+            .style("fill", "black")
         
+        d3.select(self.frameElement)
+            .style("height", diameter + "px");
 
-      } else {
-        d3.select(event.currentTarget).classed('selected', false)
-        dispatcher.call('selection', this, svg.selectAll('.selected').data());
-        // dispatch call here
+
+    // brush code (referenced from Cody Dunne's example)
+    svg.call(brush);
+
+    // Highlight points when brushed
+    function brush(g) {
+      const brush = d3.brush() // Create a 2D interactive brush
+        .on('start brush', highlight) // When the brush starts/continues do...
+        .on('end', brushEnd) // When the brush ends do...
+        .extent([
+          [0,0],
+          [208,208]
+        ]);
+        
+      ourBrush = brush;
+
+      g.call(brush); // Adds the brush to this element
+
+      // Highlight the selected circles
+      function highlight(event, d) {
+        if (event.selection === null) return;
+        const [
+          [x0, y0],
+          [x1, y1]
+        ] = event.selection;
+        let circles = svg.selectAll('circle')
+        circles.classed("selected", function(d){ 
+          return (x0 <= d.x + d.r && d.x - d.r <= x1 && y0 <= d.y + 8 + d.r && d.y + 8 - d.r <= y1)
+        })
+
+        // Let other charts know about our selection
+        dispatcher.call("selectionUpdated", this, svg.selectAll('.selected').data());
+        console.log(svg.selectAll('.selected').data())
+      }
+      
+      function brushEnd(event, d){
+        // We don't want infinite recursion
+        if(event.sourceEvent !== undefined && event.sourceEvent.type!='end'){
+          d3.select(this).call(brush.move, null);
+        }
+      }
+    }        
+            return chart;
     }
-  })
-     .on('mouseover', (event, d) => {
-    
-    if (!d3.select(event.currentTarget).classed('selected')) {
-      d3.select(event.currentTarget).classed('selected', true)
-      dispatcher.call('selection', this, svg.selectAll('.selected').data());
-      // dispatch call here
 
-    } else if (d3.select(event.currentTarget).classed('selected')) {
-      d3.select(event.currentTarget).classed('selected', true)
-      dispatcher.call('selection', this, svg.selectAll('.selected').data());
-      // dispatch call here
-    }
-    ;
-  })
+  // Gets or sets the dispatcher we use for selection events
+  chart.selectionDispatcher = function (_) {
+    if (!arguments.length) return dispatcher;
+    dispatcher = _;
+    return chart;
+  };
 
-  .on('mouseout', (event, d) => {
-    if (d3.select(event.currentTarget).classed('selected')) {
-      d3.select(event.currentTarget).classed('selected', true)
-      dispatcher.call('selection', this, svg.selectAll('.selected').data());
-      // dispatch call here
-    } else if (d3.select(event.currentTarget).classed('selected')) {
-      d3.select(event.currentTarget).classed('selected', false)
-      dispatcher.call('selection', this, svg.selectAll('.selected').data());
-      // dispatch call here
-    };
-  })
+  // linking (is not required)
+  // chart.updateSelection = function (selectedData) {
+  //   let selectedWords = [] // keep track of words in a string array
+  //   for (let i =0; i < selectedData.length; i++) {
+  //     selectedWords.push(selectedData[i].keywords)
+  //   }
+  //   if (!arguments.length) return;
+  //   let circles = svg.selectAll('circle')
+  //   circles.classed("selected", function(d){ // if bubble is selected, color it
+  //     return selectedWords.includes(d.data.keywords)
+  //   })
+  // };
 
-    // all the keyword labels of the json
-  let text = svg.select("g")
-    .selectAll("text")
-    .data(data.nodes)
-    .enter()
-    .append("text")
-    .attr("dx", width / 2)
-    .attr("dy", height / 2)
-    .text(d => d.id)
-
-  // force usage referenced from Yan Holtz
-  // to move the bubbles on initiation
-  let simulation = d3.forceSimulation()
-  .force("center", d3.forceCenter().x(width / 2).y(
-      height / 2)) // Attraction to the center of the svg area
-  .force("charge", d3.forceManyBody().strength(
-      0.5)) // Nodes are attracted one each other of value is > 0
-  .force("collide", d3.forceCollide().strength(.01).radius(60).iterations(1)) // Force that avoids circle overlapping
-
-// Apply these forces to the nodes/text and update their positions.
-  simulation
-  .nodes(data.nodes)
-  .on("tick", function (d) {
-    node
-    .attr("cx", function (d) {
-      return d.x;
-    })
-    .attr("cy", function (d) {
-      return d.y;
-    })
-    text
-    .attr("dx", function (d) {
-      return d.x;
-    })
-    .attr("dy", function (d) {
-      return d.y;
-    })
-  })
-});
+    return chart;
+}
