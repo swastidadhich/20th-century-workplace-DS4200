@@ -71,16 +71,21 @@ function graphNetwork() {
           .text("Related Words")
           .attr("font-size", 10)
           .style("fill", "black")
-		 
-
-		  // all the lines
+		
+			// all the lines
 		  var link = svg.append("g")
 		      .attr("class", "links")
 		    .selectAll("line")
 		    .data(data.links)
 		    .enter().append("line")
 		      .attr("stroke-width", function(d) { return d.value });
-		  
+
+		  link.append("text")
+		  	.text("test")
+		      .attr("dy", ".2em")
+		      .style("text-anchor", "middle")
+		      .attr("font-size", 8);
+
 		  // all the node objects
 		  var node = svg.append("g")
 		      .attr("class", "nodes")
@@ -108,6 +113,7 @@ function graphNetwork() {
 		          return "#bc6bee"
 		        }
 		      })
+
 
 		  // text labels of nodes
 		  node.append("text")
