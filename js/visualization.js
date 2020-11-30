@@ -17,7 +17,10 @@
 
     d3.json('data/graph.json').then((data) => {
       networkGraph = graphNetwork()
-      ('#network', data)
+      ('#network', data);
+
+      bubbleChart.selectionDispatcher()
+      .on(`${dispatchString}.bc_to_nw`, networkGraph.updateSelection)
       
     });
 

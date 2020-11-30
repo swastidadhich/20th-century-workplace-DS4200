@@ -122,8 +122,9 @@ function graphBubble() {
         })
 
         // Let other charts know about our selection
-        dispatcher.call("selectionUpdated", this, svg.selectAll('.selected').data());
-        console.log(svg.selectAll('.selected').data())
+        let dispatchString = Object.getOwnPropertyNames(dispatcher._)[0];
+        dispatcher.call(dispatchString, this, svg.selectAll('.selected').data());
+        console.log(svg.selectAll('.selected').data());
       }
       
       function brushEnd(event, d){
@@ -133,6 +134,7 @@ function graphBubble() {
         }
       }
     }        
+            
             return chart;
     }
 

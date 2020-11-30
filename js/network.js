@@ -90,6 +90,14 @@ function graphNetwork() {
 
 		  // all the circles in the node  
 		  var circles = node.append("circle")
+		      .attr("class", function(d) {
+		      	if (d.group == "root") {
+		      		return "nodeCircles"
+		      	}
+		      	else {
+		      		return "nodeChildren"
+		      	}
+		      })
 		      .attr('id', d => d.id)
 		      .attr("r", 10)
 		      .attr("fill", function(d) { 
@@ -139,8 +147,37 @@ function graphNetwork() {
 		          return "translate(" + d.x + "," + d.y + ")";
 		        })
 		  }
+
+		  return chart;
 		     }
 
-return chart
-		  
+	chart.selectionDispatcher = function (_) {
+    if (!arguments.length) return dispatcher;
+    dispatcher = _;
+    return chart;
+  };
+
+  // Given selected data from another visualization 
+  // select the relevant elements here (linking)
+  chart.updateSelection = function (selectedData) {
+    console.log("heard")
+    let selectedWords = [] // keep track of words in a string array
+    for (let i =0; i < selectedData.length; i++) {
+      selectedWords.push(selectedData[i].data.keywords)
+    }
+    console.log(selectedWords)
+    
+    if (!arguments.length) return;
+    let circles = document.getElementsByClassName('nodeCircles')
+    for (let i = 0; i<circles.length; i++) {
+    	if (selectedWords.includes(circles[i].id)) {
+    		circles[i].setAttribute("fill", "red")
+    	} else {
+    		circles[i].setAttribute("fill", "#69b3a2")
+    	}
+    }
+
+  };
+
+	return chart		  
 }
