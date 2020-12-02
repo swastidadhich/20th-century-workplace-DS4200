@@ -6,18 +6,16 @@ var slices = []
 // Reusable Chart framework https://bost.ocks.org/mike/chart/
 function graphline() {
 
-  console.log("hello");
-
   // Based on Mike Bostock's margin convention
   // https://bl.ocks.org/mbostock/3019563
   let margin = {
-      top: 50,
-      left: 50,
-      right: 50,
+      top: 30,
+      left: 25,
+      right: 25,
       bottom: 50
     },
-    width = 1500,
-    height = 500,
+    width = 800,
+    height = 350,
     xValue = d => d.date,
     yValue = d => d.count,
     xLabelText = '',
@@ -67,6 +65,7 @@ function graphline() {
 
     svg = svg.append('g')
         .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+
 
     //Define scales
     xScale
@@ -125,7 +124,7 @@ function graphline() {
       // creates <g> block for each line
       .append("g")
 
-
+      var color = d3.scaleOrdinal(d3.schemeCategory10);
 
 
     // Add the line
@@ -133,54 +132,12 @@ function graphline() {
     .attr("id", function(d) { return d.id }) // the id is the keyword
     .attr('class', 'line')
     .attr("d", function(d) { return line(d.values); })
-    .style("stroke", "#000000")
-
-    svg.call(brush);
-
-    // Highlight points when brushed
-    function brush(g) {
-      const brush = d3.brush()
-        .on('start brush', highlight)
-        .on('end', brushEnd)
-        .extent([
-          [-margin.left, -margin.bottom],
-          [width + margin.right, height + margin.top]
-        ]);
-
-      ourBrush = brush;
-
-      g.call(brush); // Adds the brush to this element
-
-      // Highlight the selected circles.
-      function highlight(event, d) {
-        if (event.selection === null) return;
-        const [
-          [x0, y0],
-          [x1, y1]
-        ] = event.selection;
-        points.classed('selected', d =>
-          x0 <= X(d) && X(d) <= x1 && y0 <= Y(d) && Y(d) <= y1
-        );
-
-        // Get the name of our dispatcher's event
-        let dispatchString = Object.getOwnPropertyNames(dispatcher._)[0];
-
-        // Let other charts know
-        dispatcher.call(dispatchString, this, svg.selectAll('.selected').data());
-      }
-
-      function brushEnd(event, d) {
-        // We don't want infinite recursion
-        if(event.sourceEvent !== undefined && event.sourceEvent.type!='end'){
-          d3.select(this).call(brush.move, null);
-        }
-      }
-    }
+    .style('stroke', function(d) {return d.color = color(d.key); })
 
     return chart;
   }
 
-  // The x-accessor from the datum
+  // The x-accessor from the datums
   function X(d) {
     return xScale(xValue(d));
   }
