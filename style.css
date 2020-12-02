@@ -56,10 +56,10 @@ flex: 1;
 
 
 .vis-holder2 {
-  width: 100%;
+ 	width: 100%;
 	height: 100%;
-  display: block;
-  margin: auto;
+  	display: block;
+  	margin: auto;
 	max-width: 800px;
 }
 
@@ -77,7 +77,24 @@ flex: 1;
   background-color: #f4f1f0;
 }
 
+<<<<<<< Updated upstream
 /* Fork on GitHub ribbon via https://codepo8.github.io/css-fork-on-github-ribbon/# */
+=======
+div.tooltip {	
+    position: absolute;			
+    text-align: center;			
+    width: 70px;					
+    height: 30;					
+    padding: 2px;				
+    font: 18px sans-serif;		
+    background: lightsteelblue;	
+    border: 0px;		
+    border-radius: 8px;			
+    pointer-events: none;			
+}
+
+/* Fork on GitHub ribbon via https://codepo8.github.io/css-fork-on-github-ribbon/# */  
+>>>>>>> Stashed changes
 #forkongithub a{
 	background:#00F;
 	color:#fff;
