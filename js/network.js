@@ -16,6 +16,11 @@ function graphNetwork() {
 
     function chart(selector, data) {
 
+    	// Define the div for the tooltip
+		let div = d3.select(selector).append("div")	
+   			.attr("class", "tooltip")				
+    		.style("opacity", 0);
+
      	let svg = d3.select(selector)
 		  .append("svg")
 		  .attr('preserveAspectRatio', 'xMidYMid meet')
@@ -77,14 +82,22 @@ function graphNetwork() {
 		      .attr("class", "links")
 		    .selectAll("line")
 		    .data(data.links)
-		    .enter().append("line")
-		      .attr("stroke-width", function(d) { return d.value });
-
-		  link.append("text")
-		  	.text("test")
-		      .attr("dy", ".2em")
-		      .style("text-anchor", "middle")
-		      .attr("font-size", 8);
+		    .enter()
+		    	.append("line")
+		      	.attr("stroke-width", function(d) { return d.value })
+		      	.on("mouseover", function(event, d) {		
+            		div.transition()		
+                		.duration(200)		
+               			.style("opacity", .9);		
+            		div	.html("Links: " + d.value)	
+                		.style("left", (event.pageX) + "px")		
+                		.style("top", (event.pageY - 28) + "px");	
+            	})					
+        		.on("mouseout", function(d) {		
+          			div.transition()		
+                		.duration(500)		
+                		.style("opacity", 0);	
+       			});
 
 		  // all the node objects
 		  var node = svg.append("g")
@@ -113,7 +126,6 @@ function graphNetwork() {
 		          return "#bc6bee"
 		        }
 		      })
-
 
 		  // text labels of nodes
 		  node.append("text")

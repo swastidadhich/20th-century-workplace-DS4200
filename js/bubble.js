@@ -60,14 +60,12 @@ function graphBubble() {
                 return  !d.children
             })
 
-
             .append("g")
             .attr("class", "node")
             .attr("transform", function(d) {
                 return `translate(${d.x}, ${d.y + 8})`
             })
             .attr("cx", 410).attr("cy", 190)
-
 
             // add the actual circles
             node.append("circle")
@@ -84,7 +82,7 @@ function graphBubble() {
             })
             .attr("font-family", "sans-serif")
             .attr("font-size", function(d){
-                return d.r/3; // font size is 1/3 radius
+                return d.r/3.5; // font size is 1/3 radius
             })
             .style("fill", "black")
         
