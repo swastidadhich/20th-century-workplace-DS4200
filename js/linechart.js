@@ -17,7 +17,7 @@ function graphline() {
       bottom: 50
     },
     width = 1500,
-    height = 1500,
+    height = 500,
     xValue = d => d.date,
     yValue = d => d.count,
     xLabelText = '',
