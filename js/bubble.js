@@ -31,7 +31,6 @@ function graphBubble() {
             .append('svg')
               .attr('preserveAspectRatio', 'xMidYMid meet')
               .attr('viewBox', [50, 0, 205, 250].join(' '))
-              .classed('svg-content', true)
       
             svg = svg.append('g')
               .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
