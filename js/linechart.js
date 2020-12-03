@@ -119,14 +119,24 @@ function graphline() {
         .attr('transform', 'translate(' + yLabelOffsetPx + ', -12)')
         .text(yLabelText);
 
-        // text label for the y axis from https://bl.ocks.org/d3noob/23e42c8f67210ac6c678db2cd07a747e
- svg.append("text")
+    // text label for the y axis from https://bl.ocks.org/d3noob/23e42c8f67210ac6c678db2cd07a747e
+    svg.append("text")
      .attr("transform", "rotate(-90)")
      .attr("y", 0 - margin.left)
      .attr("x",0 - (height / 2))
      .attr("dy", "1em")
      .style("text-anchor", "middle")
      .text("Frequency of Words");
+
+    // adds the title of the graph
+    // template from D3 Title Reference
+    svg.append("text")
+      .attr("x", (width / 2))             
+      .attr("y", 0)
+      .attr("text-anchor", "middle")  
+      .style("font-size", "16px") 
+      .style("text-decoration", "underline")  
+      .text("Keyword Trends over Time");
 
     let line = d3.line()
 
