@@ -82,8 +82,12 @@ function graphBubble() {
             })
             .attr("font-family", "sans-serif")
             .attr("font-size", function(d){
+                if ((d.r/3.5) < 1.5) {
+                  return 2
+                } 
+                else {
                 return d.r/3.5; // font size is 1/3 radius
-            })
+            }})
             .style("fill", "black")
         
         d3.select(self.frameElement)
@@ -114,6 +118,7 @@ function graphBubble() {
           [x0, y0],
           [x1, y1]
         ] = event.selection;
+        console.log(x0,x1,y0,y1)
         let circles = svg.selectAll('circle')
         circles.classed("selected", function(d){ 
           return (x0 <= d.x + d.r && d.x - d.r <= x1 && y0 <= d.y + 8 + d.r && d.y + 8 - d.r <= y1)

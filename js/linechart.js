@@ -124,7 +124,7 @@ function graphline() {
       // creates <g> block for each line
       .append("g")
 
-      var color = d3.scaleOrdinal(d3.schemeCategory10);
+    var color = d3.scaleOrdinal(d3.schemeCategory10);
 
 
     // Add the line
@@ -132,7 +132,7 @@ function graphline() {
     .attr("id", function(d) { return d.id }) // the id is the keyword
     .attr('class', 'line')
     .attr("d", function(d) { return line(d.values); })
-    .style('stroke', function(d) {return d.color = color(d.key); })
+    .style('stroke', function(d) {return color(d.id); })
 
     return chart;
   }
