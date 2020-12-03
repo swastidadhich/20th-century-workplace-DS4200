@@ -37,10 +37,10 @@ function graphBubble() {
 
               // title
               svg.append("text") 
-                .attr("y", 10)
+                .attr("y", 13)
                 .attr("x", 100)
                 .attr("text-anchor", "middle")
-                .style("font-size", "4px")
+                .style("font-size", "7px")
                 .style("text-decoration", "underline")
                 .attr('margin-bottom', 200)
                 .text("Most Used Keywords on UberPeople.net")
