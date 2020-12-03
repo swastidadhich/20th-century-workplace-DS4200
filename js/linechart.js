@@ -10,16 +10,16 @@ function graphline() {
   // https://bl.ocks.org/mbostock/3019563
   let margin = {
       top: 30,
-      left: 25,
+      left: 55,
       right: 25,
-      bottom: 50
+      bottom: 75
     },
     width = 850,
     height = 350,
     xValue = d => d.date,
     yValue = d => d.count,
     xLabelText = 'Date',
-    yLabelText = 'Frequency of Words',
+    yLabelText = '',
     yLabelOffsetPx = 0,
     xScale = d3.scaleTime(),
     yScale = d3.scaleLinear(),
@@ -100,6 +100,12 @@ function graphline() {
         .attr('transform', 'translate(' + (width - 50) + ',-10)')
         .text(xLabelText);
 
+    // text label for the x axis
+      svg.append("text")
+          .attr("transform", "translate(" + (width/2) + " ," + (height + margin.top + 30) + ")")
+          .style("text-anchor", "middle")
+          .text("Date");
+
     // Y axis and label
     let yAxis = svg.append('g')
         .call(d3.axisLeft(yScale))
@@ -107,6 +113,15 @@ function graphline() {
         .attr('class', 'axisLabel')
         .attr('transform', 'translate(' + yLabelOffsetPx + ', -12)')
         .text(yLabelText);
+
+        // text label for the y axis from https://bl.ocks.org/d3noob/23e42c8f67210ac6c678db2cd07a747e
+ svg.append("text")
+     .attr("transform", "rotate(-90)")
+     .attr("y", 0 - margin.left)
+     .attr("x",0 - (height / 2))
+     .attr("dy", "1em")
+     .style("text-anchor", "middle")
+     .text("Frequency of Words");
 
     let line = d3.line()
 
