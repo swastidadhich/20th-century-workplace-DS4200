@@ -34,6 +34,11 @@ function graphline() {
   // specified by the selector using the given data
   function chart(selector, data) {
 
+      // Define the div for the tooltip
+    let div = d3.select(selector).append("div") 
+        .attr("class", "tooltip2")       
+        .style("opacity", 0);
+
     data.forEach((word) => {
 
         let wordObject = slices.find(el => el.id === word.word );
@@ -149,6 +154,20 @@ function graphline() {
     .attr("d", function(d) { return line(d.values); })
     .style('stroke', function(d) {return color(d.id); })
 
+    .on("mouseover", function(event, d) {   
+                div.transition()    
+                    .duration(200)    
+                    .style("opacity", .9);    
+                div .html("keyword: " + d.id)  
+                    .style("left", (event.pageX) + "px")    
+                    .style("top", (event.pageY - 28) + "px"); 
+              })          
+            .on("mouseout", function(d) {   
+                div.transition()    
+                    .duration(500)    
+                    .style("opacity", 0); 
+            });
+
     return chart;
   }
 
@@ -217,15 +236,24 @@ function graphline() {
     return chart;
   };
 
-  // Given selected data from another visualization
-  // select the relevant elements here (linking)
   chart.updateSelection = function (selectedData) {
+    console.log("heard")
+    let selectedWords = [] // keep track of words in a string array
+    for (let i =0; i < selectedData.length; i++) {
+      selectedWords.push(selectedData[i].data.keywords)
+    }
+    console.log(selectedWords)
+    
     if (!arguments.length) return;
+    let lines = document.getElementsByClassName('line')
+    for (let i = 0; i<lines.length; i++) {
+      if (selectedWords.includes(lines[i].id)) {
+        lines[i].style.display = 'block';
+      } else {
+        lines[i].style.display = 'none';
+      }
+    }
 
-    // Select an element if its datum was selected
-    selectableElements.classed('selected', d =>
-      selectedData.includes(d)
-    );
   };
 
   return chart;

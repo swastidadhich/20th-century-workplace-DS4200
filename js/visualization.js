@@ -40,6 +40,9 @@
       bubbleChart.selectionDispatcher()
       .on(`${dispatchString}.bc_to_nw`, networkGraph.updateSelection)
 
+      bubbleChart.selectionDispatcher()
+      .on(`${dispatchString}.bc_to_lg`, lineChart.updateSelection)
+
     });
 
   });

@@ -178,7 +178,6 @@ function graphNetwork() {
   // Given selected data from another visualization 
   // select the relevant elements here (linking)
   chart.updateSelection = function (selectedData) {
-    console.log("heard")
     let selectedWords = [] // keep track of words in a string array
     for (let i =0; i < selectedData.length; i++) {
       selectedWords.push(selectedData[i].data.keywords)

@@ -65,8 +65,8 @@ flex: 1;
 
 .line {
 	fill: none;
-	stroke-width: 2.5px;
-	display: hide;
+	stroke-width: 3px;
+	display: none;
 }
 
 .show {
@@ -81,6 +81,19 @@ div.tooltip {
     position: absolute;
     text-align: center;
     width: 70px;
+    height: 30;
+    padding: 2px;
+    font: 18px sans-serif;
+    background: lightsteelblue;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+div.tooltip2 {
+    position: absolute;
+    text-align: center;
+    width: 100px;
     height: 30;
     padding: 2px;
     font: 18px sans-serif;
