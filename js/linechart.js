@@ -14,7 +14,7 @@ function graphline() {
       right: 25,
       bottom: 50
     },
-    width = 800,
+    width = 850,
     height = 350,
     xValue = d => d.date,
     yValue = d => d.count,
