@@ -1,466 +1,466 @@
 date,word,count
-10/1/18,covid,60
-10/2/18,covid,78
-10/3/18,covid,14
-10/4/18,covid,38
-10/5/18,covid,71
-10/6/18,covid,40
-10/7/18,covid,46
-10/8/18,covid,57
-10/9/18,covid,67
-10/10/18,covid,54
-10/11/18,covid,62
-10/12/18,covid,98
-10/13/18,covid,25
-10/14/18,covid,80
-10/15/18,covid,81
-10/16/18,covid,51
-10/17/18,covid,17
-10/18/18,covid,65
-10/19/18,covid,15
-10/20/18,covid,20
-10/21/18,covid,29
-10/22/18,covid,48
-10/23/18,covid,92
-10/24/18,covid,87
-10/25/18,covid,55
-10/26/18,covid,30
-10/27/18,covid,94
-10/28/18,covid,56
-10/29/18,covid,42
-10/30/18,covid,52
-10/31/18,covid,53
-10/1/18,health insurance,24
-10/2/18,health insurance,13
-10/3/18,health insurance,14
-10/4/18,health insurance,19
-10/5/18,health insurance,20
-10/6/18,health insurance,10
-10/7/18,health insurance,11
-10/8/18,health insurance,21
-10/9/18,health insurance,16
-10/10/18,health insurance,14
-10/11/18,health insurance,10
-10/12/18,health insurance,22
-10/13/18,health insurance,14
-10/14/18,health insurance,22
-10/15/18,health insurance,17
-10/16/18,health insurance,23
-10/17/18,health insurance,15
-10/18/18,health insurance,10
-10/19/18,health insurance,13
-10/20/18,health insurance,15
-10/21/18,health insurance,22
-10/22/18,health insurance,24
-10/23/18,health insurance,11
-10/24/18,health insurance,11
-10/25/18,health insurance,18
-10/26/18,health insurance,20
-10/27/18,health insurance,17
-10/28/18,health insurance,24
-10/29/18,health insurance,14
-10/30/18,health insurance,10
-10/31/18,health insurance,17
-10/1/18,car insurance,16
-10/2/18,car insurance,14
-10/3/18,car insurance,35
-10/4/18,car insurance,25
-10/5/18,car insurance,29
-10/6/18,car insurance,10
-10/7/18,car insurance,26
-10/8/18,car insurance,12
-10/9/18,car insurance,25
-10/10/18,car insurance,23
-10/11/18,car insurance,31
-10/12/18,car insurance,28
-10/13/18,car insurance,23
-10/14/18,car insurance,35
-10/15/18,car insurance,11
-10/16/18,car insurance,29
-10/17/18,car insurance,22
-10/18/18,car insurance,26
-10/19/18,car insurance,31
-10/20/18,car insurance,21
-10/21/18,car insurance,12
-10/22/18,car insurance,30
-10/23/18,car insurance,15
-10/24/18,car insurance,15
-10/25/18,car insurance,30
-10/26/18,car insurance,11
-10/27/18,car insurance,27
-10/28/18,car insurance,33
-10/29/18,car insurance,33
-10/30/18,car insurance,23
-10/31/18,car insurance,10
-10/1/18,minimum wage,23
-10/2/18,minimum wage,15
-10/3/18,minimum wage,12
-10/4/18,minimum wage,11
-10/5/18,minimum wage,22
-10/6/18,minimum wage,11
-10/7/18,minimum wage,22
-10/8/18,minimum wage,21
-10/9/18,minimum wage,24
-10/10/18,minimum wage,23
-10/11/18,minimum wage,26
-10/12/18,minimum wage,16
-10/13/18,minimum wage,14
-10/14/18,minimum wage,17
-10/15/18,minimum wage,20
-10/16/18,minimum wage,10
-10/17/18,minimum wage,11
-10/18/18,minimum wage,13
-10/19/18,minimum wage,24
-10/20/18,minimum wage,29
-10/21/18,minimum wage,13
-10/22/18,minimum wage,30
-10/23/18,minimum wage,10
-10/24/18,minimum wage,22
-10/25/18,minimum wage,13
-10/26/18,minimum wage,29
-10/27/18,minimum wage,14
-10/28/18,minimum wage,11
-10/29/18,minimum wage,29
-10/30/18,minimum wage,18
-10/31/18,minimum wage,14
-10/1/18,long hours,1
-10/2/18,long hours,6
-10/3/18,long hours,4
-10/4/18,long hours,6
-10/5/18,long hours,4
-10/6/18,long hours,4
-10/7/18,long hours,5
-10/8/18,long hours,8
-10/9/18,long hours,9
-10/10/18,long hours,6
-10/11/18,long hours,2
-10/12/18,long hours,9
-10/13/18,long hours,5
-10/14/18,long hours,9
-10/15/18,long hours,3
-10/16/18,long hours,8
-10/17/18,long hours,5
-10/18/18,long hours,9
-10/19/18,long hours,7
-10/20/18,long hours,9
-10/21/18,long hours,10
-10/22/18,long hours,0
-10/23/18,long hours,7
-10/24/18,long hours,3
-10/25/18,long hours,2
-10/26/18,long hours,4
-10/27/18,long hours,1
-10/28/18,long hours,2
-10/29/18,long hours,7
-10/30/18,long hours,3
-10/31/18,long hours,6
-10/1/18,uberEats,8
-10/2/18,uberEats,45
-10/3/18,uberEats,26
-10/4/18,uberEats,5
-10/5/18,uberEats,48
-10/6/18,uberEats,10
-10/7/18,uberEats,25
-10/8/18,uberEats,22
-10/9/18,uberEats,22
-10/10/18,uberEats,10
-10/11/18,uberEats,7
-10/12/18,uberEats,43
-10/13/18,uberEats,3
-10/14/18,uberEats,46
-10/15/18,uberEats,38
-10/16/18,uberEats,4
-10/17/18,uberEats,35
-10/18/18,uberEats,24
-10/19/18,uberEats,44
-10/20/18,uberEats,38
-10/21/18,uberEats,11
-10/22/18,uberEats,28
-10/23/18,uberEats,37
-10/24/18,uberEats,49
-10/25/18,uberEats,20
-10/26/18,uberEats,46
-10/27/18,uberEats,50
-10/28/18,uberEats,7
-10/29/18,uberEats,34
-10/30/18,uberEats,17
-10/31/18,uberEats,41
-10/1/18,ride hail,23
-10/2/18,ride hail,15
-10/3/18,ride hail,21
-10/4/18,ride hail,26
-10/5/18,ride hail,6
-10/6/18,ride hail,6
-10/7/18,ride hail,19
-10/8/18,ride hail,14
-10/9/18,ride hail,5
-10/10/18,ride hail,23
-10/11/18,ride hail,6
-10/12/18,ride hail,18
-10/13/18,ride hail,9
-10/14/18,ride hail,7
-10/15/18,ride hail,11
-10/16/18,ride hail,6
-10/17/18,ride hail,8
-10/18/18,ride hail,23
-10/19/18,ride hail,14
-10/20/18,ride hail,1
-10/21/18,ride hail,8
-10/22/18,ride hail,11
-10/23/18,ride hail,23
-10/24/18,ride hail,25
-10/25/18,ride hail,25
-10/26/18,ride hail,2
-10/27/18,ride hail,9
-10/28/18,ride hail,24
-10/29/18,ride hail,17
-10/30/18,ride hail,8
-10/31/18,ride hail,30
-10/1/18,new driver,5
-10/2/18,new driver,0
-10/3/18,new driver,3
-10/4/18,new driver,23
-10/5/18,new driver,0
-10/6/18,new driver,8
-10/7/18,new driver,17
-10/8/18,new driver,1
-10/9/18,new driver,19
-10/10/18,new driver,29
-10/11/18,new driver,13
-10/12/18,new driver,1
-10/13/18,new driver,23
-10/14/18,new driver,4
-10/15/18,new driver,6
-10/16/18,new driver,1
-10/17/18,new driver,26
-10/18/18,new driver,4
-10/19/18,new driver,24
-10/20/18,new driver,16
-10/21/18,new driver,22
-10/22/18,new driver,19
-10/23/18,new driver,18
-10/24/18,new driver,14
-10/25/18,new driver,19
-10/26/18,new driver,15
-10/27/18,new driver,27
-10/28/18,new driver,29
-10/29/18,new driver,0
-10/30/18,new driver,20
-10/31/18,new driver,29
-10/1/18,pandemic,8
-10/2/18,pandemic,4
-10/3/18,pandemic,9
-10/4/18,pandemic,27
-10/5/18,pandemic,12
-10/6/18,pandemic,27
-10/7/18,pandemic,4
-10/8/18,pandemic,28
-10/9/18,pandemic,20
-10/10/18,pandemic,15
-10/11/18,pandemic,9
-10/12/18,pandemic,25
-10/13/18,pandemic,26
-10/14/18,pandemic,6
-10/15/18,pandemic,23
-10/16/18,pandemic,1
-10/17/18,pandemic,24
-10/18/18,pandemic,27
-10/19/18,pandemic,23
-10/20/18,pandemic,29
-10/21/18,pandemic,26
-10/22/18,pandemic,30
-10/23/18,pandemic,28
-10/24/18,pandemic,9
-10/25/18,pandemic,6
-10/26/18,pandemic,23
-10/27/18,pandemic,3
-10/28/18,pandemic,13
-10/29/18,pandemic,18
-10/30/18,pandemic,1
-10/31/18,pandemic,12
-10/1/18,safety,6
-10/2/18,safety,25
-10/3/18,safety,21
-10/4/18,safety,17
-10/5/18,safety,4
-10/6/18,safety,12
-10/7/18,safety,5
-10/8/18,safety,25
-10/9/18,safety,14
-10/10/18,safety,9
-10/11/18,safety,18
-10/12/18,safety,5
-10/13/18,safety,26
-10/14/18,safety,9
-10/15/18,safety,19
-10/16/18,safety,5
-10/17/18,safety,5
-10/18/18,safety,28
-10/19/18,safety,19
-10/20/18,safety,3
-10/21/18,safety,2
-10/22/18,safety,11
-10/23/18,safety,1
-10/24/18,safety,22
-10/25/18,safety,30
-10/26/18,safety,23
-10/27/18,safety,7
-10/28/18,safety,24
-10/29/18,safety,23
-10/30/18,safety,9
-10/31/18,safety,26
-10/1/18,health safety,18
-10/2/18,health safety,28
-10/3/18,health safety,12
-10/4/18,health safety,5
-10/5/18,health safety,1
-10/6/18,health safety,6
-10/7/18,health safety,2
-10/8/18,health safety,15
-10/9/18,health safety,2
-10/10/18,health safety,30
-10/11/18,health safety,17
-10/12/18,health safety,8
-10/13/18,health safety,15
-10/14/18,health safety,28
-10/15/18,health safety,21
-10/16/18,health safety,16
-10/17/18,health safety,26
-10/18/18,health safety,20
-10/19/18,health safety,27
-10/20/18,health safety,21
-10/21/18,health safety,7
-10/22/18,health safety,8
-10/23/18,health safety,6
-10/24/18,health safety,13
-10/25/18,health safety,17
-10/26/18,health safety,19
-10/27/18,health safety,5
-10/28/18,health safety,25
-10/29/18,health safety,21
-10/30/18,health safety,11
-10/31/18,health safety,10
-10/1/18,assault,6
-10/2/18,assault,5
-10/3/18,assault,0
-10/4/18,assault,5
-10/5/18,assault,3
-10/6/18,assault,0
-10/7/18,assault,9
-10/8/18,assault,8
-10/9/18,assault,2
-10/10/18,assault,9
-10/11/18,assault,5
-10/12/18,assault,7
-10/13/18,assault,8
-10/14/18,assault,3
-10/15/18,assault,10
-10/16/18,assault,5
-10/17/18,assault,6
-10/18/18,assault,3
-10/19/18,assault,0
-10/20/18,assault,5
-10/21/18,assault,7
-10/22/18,assault,1
-10/23/18,assault,6
-10/24/18,assault,3
-10/25/18,assault,5
-10/26/18,assault,7
-10/27/18,assault,7
-10/28/18,assault,4
-10/29/18,assault,8
-10/30/18,assault,9
-10/31/18,assault,7
-10/1/18,racism,1
-10/2/18,racism,4
-10/3/18,racism,3
-10/4/18,racism,5
-10/5/18,racism,5
-10/6/18,racism,0
-10/7/18,racism,2
-10/8/18,racism,2
-10/9/18,racism,2
-10/10/18,racism,2
-10/11/18,racism,4
-10/12/18,racism,0
-10/13/18,racism,1
-10/14/18,racism,2
-10/15/18,racism,5
-10/16/18,racism,0
-10/17/18,racism,5
-10/18/18,racism,5
-10/19/18,racism,1
-10/20/18,racism,0
-10/21/18,racism,5
-10/22/18,racism,0
-10/23/18,racism,5
-10/24/18,racism,0
-10/25/18,racism,4
-10/26/18,racism,2
-10/27/18,racism,5
-10/28/18,racism,2
-10/29/18,racism,4
-10/30/18,racism,3
-10/31/18,racism,3
-10/1/18,tipping,1
-10/2/18,tipping,1
-10/3/18,tipping,10
-10/4/18,tipping,9
-10/5/18,tipping,5
-10/6/18,tipping,5
-10/7/18,tipping,6
-10/8/18,tipping,5
-10/9/18,tipping,4
-10/10/18,tipping,3
-10/11/18,tipping,6
-10/12/18,tipping,9
-10/13/18,tipping,2
-10/14/18,tipping,3
-10/15/18,tipping,9
-10/16/18,tipping,2
-10/17/18,tipping,3
-10/18/18,tipping,0
-10/19/18,tipping,6
-10/20/18,tipping,8
-10/21/18,tipping,7
-10/22/18,tipping,0
-10/23/18,tipping,1
-10/24/18,tipping,8
-10/25/18,tipping,4
-10/26/18,tipping,6
-10/27/18,tipping,5
-10/28/18,tipping,1
-10/29/18,tipping,8
-10/30/18,tipping,2
-10/31/18,tipping,6
-10/1/18,issue,23
-10/2/18,issue,27
-10/3/18,issue,20
-10/4/18,issue,25
-10/5/18,issue,5
-10/6/18,issue,6
-10/7/18,issue,29
-10/8/18,issue,20
-10/9/18,issue,16
-10/10/18,issue,20
-10/11/18,issue,29
-10/12/18,issue,24
-10/13/18,issue,8
-10/14/18,issue,29
-10/15/18,issue,8
-10/16/18,issue,27
-10/17/18,issue,4
-10/18/18,issue,6
-10/19/18,issue,11
-10/20/18,issue,7
-10/21/18,issue,20
-10/22/18,issue,2
-10/23/18,issue,8
-10/24/18,issue,30
-10/25/18,issue,14
-10/26/18,issue,0
-10/27/18,issue,17
-10/28/18,issue,9
-10/29/18,issue,27
-10/30/18,issue,19
-10/31/18,issue,8
+7/1/20,covid,60
+7/2/20,covid,78
+7/3/20,covid,14
+7/4/20,covid,38
+7/5/20,covid,71
+7/6/20,covid,40
+7/7/20,covid,46
+7/8/20,covid,57
+7/9/20,covid,67
+7/10/20,covid,54
+7/11/20,covid,62
+7/12/20,covid,98
+7/13/20,covid,25
+7/14/20,covid,80
+7/15/20,covid,81
+7/16/20,covid,51
+7/17/20,covid,17
+7/18/20,covid,65
+7/19/20,covid,15
+7/20/20,covid,20
+7/21/20,covid,29
+7/22/20,covid,48
+7/23/20,covid,92
+7/24/20,covid,87
+7/25/20,covid,55
+7/26/20,covid,30
+7/27/20,covid,94
+7/28/20,covid,56
+7/29/20,covid,42
+7/30/20,covid,52
+7/31/20,covid,53
+7/1/20,health insurance,24
+7/2/20,health insurance,13
+7/3/20,health insurance,14
+7/4/20,health insurance,19
+7/5/20,health insurance,20
+7/6/20,health insurance,10
+7/7/20,health insurance,11
+7/8/20,health insurance,21
+7/9/20,health insurance,16
+7/10/20,health insurance,14
+7/11/20,health insurance,10
+7/12/20,health insurance,22
+7/13/20,health insurance,14
+7/14/20,health insurance,22
+7/15/20,health insurance,17
+7/16/20,health insurance,23
+7/17/20,health insurance,15
+7/18/20,health insurance,10
+7/19/20,health insurance,13
+7/20/20,health insurance,15
+7/21/20,health insurance,22
+7/22/20,health insurance,24
+7/23/20,health insurance,11
+7/24/20,health insurance,11
+7/25/20,health insurance,18
+7/26/20,health insurance,20
+7/27/20,health insurance,17
+7/28/20,health insurance,24
+7/29/20,health insurance,14
+7/30/20,health insurance,10
+7/31/20,health insurance,17
+7/1/20,car insurance,16
+7/2/20,car insurance,14
+7/3/20,car insurance,35
+7/4/20,car insurance,25
+7/5/20,car insurance,29
+7/6/20,car insurance,10
+7/7/20,car insurance,26
+7/8/20,car insurance,12
+7/9/20,car insurance,25
+7/10/20,car insurance,23
+7/11/20,car insurance,31
+7/12/20,car insurance,28
+7/13/20,car insurance,23
+7/14/20,car insurance,35
+7/15/20,car insurance,11
+7/16/20,car insurance,29
+7/17/20,car insurance,22
+7/18/20,car insurance,26
+7/19/20,car insurance,31
+7/20/20,car insurance,21
+7/21/20,car insurance,12
+7/22/20,car insurance,30
+7/23/20,car insurance,15
+7/24/20,car insurance,15
+7/25/20,car insurance,30
+7/26/20,car insurance,11
+7/27/20,car insurance,27
+7/28/20,car insurance,33
+7/29/20,car insurance,33
+7/30/20,car insurance,23
+7/31/20,car insurance,10
+7/1/20,minimum wage,23
+7/2/20,minimum wage,15
+7/3/20,minimum wage,12
+7/4/20,minimum wage,11
+7/5/20,minimum wage,22
+7/6/20,minimum wage,11
+7/7/20,minimum wage,22
+7/8/20,minimum wage,21
+7/9/20,minimum wage,24
+7/10/20,minimum wage,23
+7/11/20,minimum wage,26
+7/12/20,minimum wage,16
+7/13/20,minimum wage,14
+7/14/20,minimum wage,17
+7/15/20,minimum wage,20
+7/16/20,minimum wage,10
+7/17/20,minimum wage,11
+7/18/20,minimum wage,13
+7/19/20,minimum wage,24
+7/20/20,minimum wage,29
+7/21/20,minimum wage,13
+7/22/20,minimum wage,30
+7/23/20,minimum wage,10
+7/24/20,minimum wage,22
+7/25/20,minimum wage,13
+7/26/20,minimum wage,29
+7/27/20,minimum wage,14
+7/28/20,minimum wage,11
+7/29/20,minimum wage,29
+7/30/20,minimum wage,18
+7/31/20,minimum wage,14
+7/1/20,long hours,1
+7/2/20,long hours,6
+7/3/20,long hours,4
+7/4/20,long hours,6
+7/5/20,long hours,4
+7/6/20,long hours,4
+7/7/20,long hours,5
+7/8/20,long hours,8
+7/9/20,long hours,9
+7/10/20,long hours,6
+7/11/20,long hours,2
+7/12/20,long hours,9
+7/13/20,long hours,5
+7/14/20,long hours,9
+7/15/20,long hours,3
+7/16/20,long hours,8
+7/17/20,long hours,5
+7/18/20,long hours,9
+7/19/20,long hours,7
+7/20/20,long hours,9
+7/21/20,long hours,10
+7/22/20,long hours,0
+7/23/20,long hours,7
+7/24/20,long hours,3
+7/25/20,long hours,2
+7/26/20,long hours,4
+7/27/20,long hours,1
+7/28/20,long hours,2
+7/29/20,long hours,7
+7/30/20,long hours,3
+7/31/20,long hours,6
+7/1/20,uberEats,8
+7/2/20,uberEats,45
+7/3/20,uberEats,26
+7/4/20,uberEats,5
+7/5/20,uberEats,48
+7/6/20,uberEats,10
+7/7/20,uberEats,25
+7/8/20,uberEats,22
+7/9/20,uberEats,22
+7/10/20,uberEats,10
+7/11/20,uberEats,7
+7/12/20,uberEats,43
+7/13/20,uberEats,3
+7/14/20,uberEats,46
+7/15/20,uberEats,38
+7/16/20,uberEats,4
+7/17/20,uberEats,35
+7/18/20,uberEats,24
+7/19/20,uberEats,44
+7/20/20,uberEats,38
+7/21/20,uberEats,11
+7/22/20,uberEats,28
+7/23/20,uberEats,37
+7/24/20,uberEats,49
+7/25/20,uberEats,20
+7/26/20,uberEats,46
+7/27/20,uberEats,50
+7/28/20,uberEats,7
+7/29/20,uberEats,34
+7/30/20,uberEats,17
+7/31/20,uberEats,41
+7/1/20,ride hail,23
+7/2/20,ride hail,15
+7/3/20,ride hail,21
+7/4/20,ride hail,26
+7/5/20,ride hail,6
+7/6/20,ride hail,6
+7/7/20,ride hail,19
+7/8/20,ride hail,14
+7/9/20,ride hail,5
+7/10/20,ride hail,23
+7/11/20,ride hail,6
+7/12/20,ride hail,18
+7/13/20,ride hail,9
+7/14/20,ride hail,7
+7/15/20,ride hail,11
+7/16/20,ride hail,6
+7/17/20,ride hail,8
+7/18/20,ride hail,23
+7/19/20,ride hail,14
+7/20/20,ride hail,1
+7/21/20,ride hail,8
+7/22/20,ride hail,11
+7/23/20,ride hail,23
+7/24/20,ride hail,25
+7/25/20,ride hail,25
+7/26/20,ride hail,2
+7/27/20,ride hail,9
+7/28/20,ride hail,24
+7/29/20,ride hail,17
+7/30/20,ride hail,8
+7/31/20,ride hail,30
+7/1/20,new driver,5
+7/2/20,new driver,0
+7/3/20,new driver,3
+7/4/20,new driver,23
+7/5/20,new driver,0
+7/6/20,new driver,8
+7/7/20,new driver,17
+7/8/20,new driver,1
+7/9/20,new driver,19
+7/10/20,new driver,29
+7/11/20,new driver,13
+7/12/20,new driver,1
+7/13/20,new driver,23
+7/14/20,new driver,4
+7/15/20,new driver,6
+7/16/20,new driver,1
+7/17/20,new driver,26
+7/18/20,new driver,4
+7/19/20,new driver,24
+7/20/20,new driver,16
+7/21/20,new driver,22
+7/22/20,new driver,19
+7/23/20,new driver,18
+7/24/20,new driver,14
+7/25/20,new driver,19
+7/26/20,new driver,15
+7/27/20,new driver,27
+7/28/20,new driver,29
+7/29/20,new driver,0
+7/30/20,new driver,20
+7/31/20,new driver,29
+7/1/20,pandemic,8
+7/2/20,pandemic,4
+7/3/20,pandemic,9
+7/4/20,pandemic,27
+7/5/20,pandemic,12
+7/6/20,pandemic,27
+7/7/20,pandemic,4
+7/8/20,pandemic,28
+7/9/20,pandemic,20
+7/10/20,pandemic,15
+7/11/20,pandemic,9
+7/12/20,pandemic,25
+7/13/20,pandemic,26
+7/14/20,pandemic,6
+7/15/20,pandemic,23
+7/16/20,pandemic,1
+7/17/20,pandemic,24
+7/18/20,pandemic,27
+7/19/20,pandemic,23
+7/20/20,pandemic,29
+7/21/20,pandemic,26
+7/22/20,pandemic,30
+7/23/20,pandemic,28
+7/24/20,pandemic,9
+7/25/20,pandemic,6
+7/26/20,pandemic,23
+7/27/20,pandemic,3
+7/28/20,pandemic,13
+7/29/20,pandemic,18
+7/30/20,pandemic,1
+7/31/20,pandemic,12
+7/1/20,safety,6
+7/2/20,safety,25
+7/3/20,safety,21
+7/4/20,safety,17
+7/5/20,safety,4
+7/6/20,safety,12
+7/7/20,safety,5
+7/8/20,safety,25
+7/9/20,safety,14
+7/10/20,safety,9
+7/11/20,safety,18
+7/12/20,safety,5
+7/13/20,safety,26
+7/14/20,safety,9
+7/15/20,safety,19
+7/16/20,safety,5
+7/17/20,safety,5
+7/18/20,safety,28
+7/19/20,safety,19
+7/20/20,safety,3
+7/21/20,safety,2
+7/22/20,safety,11
+7/23/20,safety,1
+7/24/20,safety,22
+7/25/20,safety,30
+7/26/20,safety,23
+7/27/20,safety,7
+7/28/20,safety,24
+7/29/20,safety,23
+7/30/20,safety,9
+7/31/20,safety,26
+7/1/20,health safety,18
+7/2/20,health safety,28
+7/3/20,health safety,12
+7/4/20,health safety,5
+7/5/20,health safety,1
+7/6/20,health safety,6
+7/7/20,health safety,2
+7/8/20,health safety,15
+7/9/20,health safety,2
+7/10/20,health safety,30
+7/11/20,health safety,17
+7/12/20,health safety,8
+7/13/20,health safety,15
+7/14/20,health safety,28
+7/15/20,health safety,21
+7/16/20,health safety,16
+7/17/20,health safety,26
+7/18/20,health safety,20
+7/19/20,health safety,27
+7/20/20,health safety,21
+7/21/20,health safety,7
+7/22/20,health safety,8
+7/23/20,health safety,6
+7/24/20,health safety,13
+7/25/20,health safety,17
+7/26/20,health safety,19
+7/27/20,health safety,5
+7/28/20,health safety,25
+7/29/20,health safety,21
+7/30/20,health safety,11
+7/31/20,health safety,10
+7/1/20,assault,6
+7/2/20,assault,5
+7/3/20,assault,0
+7/4/20,assault,5
+7/5/20,assault,3
+7/6/20,assault,0
+7/7/20,assault,9
+7/8/20,assault,8
+7/9/20,assault,2
+7/10/20,assault,9
+7/11/20,assault,5
+7/12/20,assault,7
+7/13/20,assault,8
+7/14/20,assault,3
+7/15/20,assault,10
+7/16/20,assault,5
+7/17/20,assault,6
+7/18/20,assault,3
+7/19/20,assault,0
+7/20/20,assault,5
+7/21/20,assault,7
+7/22/20,assault,1
+7/23/20,assault,6
+7/24/20,assault,3
+7/25/20,assault,5
+7/26/20,assault,7
+7/27/20,assault,7
+7/28/20,assault,4
+7/29/20,assault,8
+7/30/20,assault,9
+7/31/20,assault,7
+7/1/20,racism,1
+7/2/20,racism,4
+7/3/20,racism,3
+7/4/20,racism,5
+7/5/20,racism,5
+7/6/20,racism,0
+7/7/20,racism,2
+7/8/20,racism,2
+7/9/20,racism,2
+7/10/20,racism,2
+7/11/20,racism,4
+7/12/20,racism,0
+7/13/20,racism,1
+7/14/20,racism,2
+7/15/20,racism,5
+7/16/20,racism,0
+7/17/20,racism,5
+7/18/20,racism,5
+7/19/20,racism,1
+7/20/20,racism,0
+7/21/20,racism,5
+7/22/20,racism,0
+7/23/20,racism,5
+7/24/20,racism,0
+7/25/20,racism,4
+7/26/20,racism,2
+7/27/20,racism,5
+7/28/20,racism,2
+7/29/20,racism,4
+7/30/20,racism,3
+7/31/20,racism,3
+7/1/20,tipping,1
+7/2/20,tipping,1
+7/3/20,tipping,10
+7/4/20,tipping,9
+7/5/20,tipping,5
+7/6/20,tipping,5
+7/7/20,tipping,6
+7/8/20,tipping,5
+7/9/20,tipping,4
+7/10/20,tipping,3
+7/11/20,tipping,6
+7/12/20,tipping,9
+7/13/20,tipping,2
+7/14/20,tipping,3
+7/15/20,tipping,9
+7/16/20,tipping,2
+7/17/20,tipping,3
+7/18/20,tipping,0
+7/19/20,tipping,6
+7/20/20,tipping,8
+7/21/20,tipping,7
+7/22/20,tipping,0
+7/23/20,tipping,1
+7/24/20,tipping,8
+7/25/20,tipping,4
+7/26/20,tipping,6
+7/27/20,tipping,5
+7/28/20,tipping,1
+7/29/20,tipping,8
+7/30/20,tipping,2
+7/31/20,tipping,6
+7/1/20,issue,23
+7/2/20,issue,27
+7/3/20,issue,20
+7/4/20,issue,25
+7/5/20,issue,5
+7/6/20,issue,6
+7/7/20,issue,29
+7/8/20,issue,20
+7/9/20,issue,16
+7/10/20,issue,20
+7/11/20,issue,29
+7/12/20,issue,24
+7/13/20,issue,8
+7/14/20,issue,29
+7/15/20,issue,8
+7/16/20,issue,27
+7/17/20,issue,4
+7/18/20,issue,6
+7/19/20,issue,11
+7/20/20,issue,7
+7/21/20,issue,20
+7/22/20,issue,2
+7/23/20,issue,8
+7/24/20,issue,30
+7/25/20,issue,14
+7/26/20,issue,0
+7/27/20,issue,17
+7/28/20,issue,9
+7/29/20,issue,27
+7/30/20,issue,19
+7/31/20,issue,8
