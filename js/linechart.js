@@ -61,7 +61,6 @@ function graphline() {
         }
       });
 
-  console.log(slices);
     let svg = d3.select(selector)
       .append('svg')
         .attr('preserveAspectRatio', 'xMidYMid meet')
@@ -247,12 +246,11 @@ function graphline() {
   };
 
   chart.updateSelection = function (selectedData) {
-    console.log("heard")
     let selectedWords = [] // keep track of words in a string array
     for (let i =0; i < selectedData.length; i++) {
       selectedWords.push(selectedData[i].data.keywords)
     }
-    console.log(selectedWords)
+
     
     if (!arguments.length) return;
     let lines = document.getElementsByClassName('line')

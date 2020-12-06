@@ -1,10 +1,10 @@
 function graphBubble() {
 
     let margin = {
-        top: 0,
+        top: 10,
         left: 50,
         right: 30,
-        bottom: 35
+        bottom: 0
       },
       ourBrush = null,
       selectableElements = d3.select(null),
@@ -31,20 +31,22 @@ function graphBubble() {
             .append('svg')
               .attr('preserveAspectRatio', 'xMidYMid meet')
               .attr('viewBox', [50, 0, 205, 250].join(' '))
-      
-            svg = svg.append('g')
-              .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
-
-              // title
-              svg.append("text") 
+      		
+      		// title
+            svg.append("text") 
                 .attr("y", 13)
-                .attr("x", 100)
+                .attr("x", 150)
                 .attr("text-anchor", "middle")
                 .style("font-size", "7px")
                 .style("text-decoration", "underline")
                 .attr('margin-bottom', 200)
                 .text("Most Used Keywords on UberPeople.net")
                 .style("fill", "rgb(0, 0, 0)")
+            
+            svg = svg.append('g')
+              .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+
+              
 
             // all the bubbles in the graph
             let nodes = d3.hierarchy(dataset)
@@ -62,7 +64,7 @@ function graphBubble() {
             .append("g")
             .attr("class", "node")
             .attr("transform", function(d) {
-                return `translate(${d.x}, ${d.y + 8})`
+                return `translate(${d.x}, ${d.y})`
             })
             .attr("cx", 410).attr("cy", 190)
 
@@ -96,6 +98,7 @@ function graphBubble() {
     // brush code (referenced from Cody Dunne's example)
     svg.call(brush);
 
+
     // Highlight points when brushed
     function brush(g) {
       const brush = d3.brush() // Create a 2D interactive brush
@@ -110,6 +113,7 @@ function graphBubble() {
 
       g.call(brush); // Adds the brush to this element
 
+      
       // Highlight the selected circles
       function highlight(event, d) {
         if (event.selection === null) return;
@@ -117,16 +121,31 @@ function graphBubble() {
           [x0, y0],
           [x1, y1]
         ] = event.selection;
-        console.log(x0,x1,y0,y1)
         let circles = svg.selectAll('circle')
         circles.classed("selected", function(d){ 
-          return (x0 <= d.x + d.r && d.x - d.r <= x1 && y0 <= d.y + 8 + d.r && d.y + 8 - d.r <= y1)
+          
+        // https://stackoverflow.com/questions/21089959/detecting-collision-of-rectangle-with-circle
+          let width = (x1 - x0)
+          let height = (y1 - y0)
+
+          let distX = Math.abs(d.x - x0-width/2);
+    	  let distY = Math.abs(d.y - y0-height/2);
+    	  
+    	  let dx=distX-width/2;
+    	  let dy=distY-height/2;
+
+    		if (distX > (width/2 + d.r)) { return false; }
+    		if (distY > (height/2 + d.r)) { return false; }
+
+    		if (distX <= (width/2)) { return true; } 
+    		if (distY <= (height/2)) { return true; }
+		return (dx*dx+dy*dy<=(d.r*d.r));
         })
 
         // Let other charts know about our selection
         let dispatchString = Object.getOwnPropertyNames(dispatcher._)[0];
         dispatcher.call(dispatchString, this, svg.selectAll('.selected').data());
-        console.log(svg.selectAll('.selected').data());
+        
       }
       
       function brushEnd(event, d){

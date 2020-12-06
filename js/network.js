@@ -182,7 +182,6 @@ function graphNetwork() {
     for (let i =0; i < selectedData.length; i++) {
       selectedWords.push(selectedData[i].data.keywords)
     }
-    console.log(selectedWords)
     
     if (!arguments.length) return;
     let circles = document.getElementsByClassName('nodeCircles')
