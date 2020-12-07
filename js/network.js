@@ -14,6 +14,8 @@ function graphNetwork() {
       dispatcher,
       svg;
 
+    // referenced from https://bl.ocks.org/heybignick/3faf257bbbbc7743bb72310d03b86ee8
+    // for force-directed network graph.
     function chart(selector, data) {
 
     	// Define the div for the tooltip
@@ -109,6 +111,8 @@ function graphNetwork() {
 		  // all the circles in the node  
 		  var circles = node.append("circle")
 		      .attr("class", function(d) {
+		      	// blue for root
+		      	// purple for subroot
 		      	if (d.group == "root") {
 		      		return "nodeCircles"
 		      	}
@@ -140,6 +144,7 @@ function graphNetwork() {
 		      .text(function(d) { return d.id; });
 
 		  // force simulation to push the nodes and links apart
+		  // https://bl.ocks.org/heybignick/3faf257bbbbc7743bb72310d03b86ee8
 		  var simulation = d3.forceSimulation()
 		    .force("link", d3.forceLink().id(function(d) { return d.id; }))
 		    .force("charge", d3.forceManyBody())
@@ -153,6 +158,7 @@ function graphNetwork() {
 		      .links(data.links);
 
 		  // on tick function
+		  // force-simulation reference
 		  function ticked() {
 		    link
 		        .attr("x1", function(d) { return d.source.x; })
@@ -169,6 +175,7 @@ function graphNetwork() {
 		  return chart;
 		     }
 
+	// sends out distpatch for other graphs
 	chart.selectionDispatcher = function (_) {
     if (!arguments.length) return dispatcher;
     dispatcher = _;
@@ -176,9 +183,9 @@ function graphNetwork() {
   };
 
   // Given selected data from another visualization 
-  // select the relevant elements here (linking)
+  // Linking, same template as linechart for accepting dispatch calls
   chart.updateSelection = function (selectedData) {
-    let selectedWords = [] // keep track of words in a string array
+    let selectedWords = []
     for (let i =0; i < selectedData.length; i++) {
       selectedWords.push(selectedData[i].data.keywords)
     }

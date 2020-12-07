@@ -2,7 +2,7 @@
 
 var slices = []
 
-// Initialize a line chart. Modeled after Mike Bostock's
+// Modeled after Mike Bostock's
 // Reusable Chart framework https://bost.ocks.org/mike/chart/
 function graphline() {
 
@@ -28,17 +28,16 @@ function graphline() {
     dispatcher;
     selector = '#linechart';
 
-
-
-  // Create the chart by adding an svg to the div with the id
-  // specified by the selector using the given data
+  // Create the chart
   function chart(selector, data) {
 
-      // Define the div for the tooltip
+      // Define the div for the tooltip 
+      // https://www.d3-graph-gallery.com/graph/interactivity_tooltip.html#position
     let div = d3.select(selector).append("div") 
         .attr("class", "tooltip2")       
         .style("opacity", 0);
 
+    // referenced from https://datawanderings.com/2019/10/28/tutorial-making-a-line-chart-in-d3-js-v-5/
     data.forEach((word) => {
 
         let wordObject = slices.find(el => el.id === word.word );
@@ -69,7 +68,6 @@ function graphline() {
 
     svg = svg.append('g')
         .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
-
 
     //Define scales
     xScale
@@ -118,7 +116,7 @@ function graphline() {
         .attr('transform', 'translate(' + yLabelOffsetPx + ', -12)')
         .text(yLabelText);
 
-    // text label for the y axis from https://bl.ocks.org/d3noob/23e42c8f67210ac6c678db2cd07a747e
+    // text label for the y axis
     svg.append("text")
      .attr("transform", "rotate(-90)")
      .attr("y", 0 - margin.left)
@@ -137,6 +135,7 @@ function graphline() {
       .style("text-decoration", "underline")  
       .text("Keyword Trends over Time");
 
+    // draw individual line
     let line = d3.line()
 
     .x(function(d) {
@@ -147,14 +146,15 @@ function graphline() {
       return yScale(d.count);
     })
 
+    // https://datawanderings.com/2019/10/28/tutorial-making-a-line-chart-in-d3-js-v-5/
     let lines = svg.selectAll("lines")
       .data(slices)
       .enter()
       // creates <g> block for each line
       .append("g")
 
+    // scales color automatically
     var color = d3.scaleOrdinal(d3.schemeCategory10);
-
 
     // Add the line
     lines.append('path')
@@ -162,7 +162,7 @@ function graphline() {
     .attr('class', 'line')
     .attr("d", function(d) { return line(d.values); })
     .style('stroke', function(d) {return color(d.id); })
-
+    // tooltip reference
     .on("mouseover", function(event, d) {   
                 div.transition()    
                     .duration(200)    
@@ -245,19 +245,22 @@ function graphline() {
     return chart;
   };
 
+
   chart.updateSelection = function (selectedData) {
-    let selectedWords = [] // keep track of words in a string array
+    // keep track of words in a Array
+    let selectedWords = []
+    // we received JS objects, convert them to list of strings 
     for (let i =0; i < selectedData.length; i++) {
       selectedWords.push(selectedData[i].data.keywords)
     }
-
-    
+    // get all the lines in the SVG
     if (!arguments.length) return;
     let lines = document.getElementsByClassName('line')
+    // for every line, if id matches show them.
     for (let i = 0; i<lines.length; i++) {
       if (selectedWords.includes(lines[i].id)) {
         lines[i].style.display = 'block';
-      } else {
+      } else { // else hide them
         lines[i].style.display = 'none';
       }
     }

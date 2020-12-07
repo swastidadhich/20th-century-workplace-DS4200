@@ -69,22 +69,22 @@
 
     <h1>Visualization explanation</h1>
 
-    <p>We chose to use a line graph to display the frequency of posts on specific keywords over time. The tilt can help explain the slope of how much of an increase or decrease this specific keyword is mentioned over time. This visualization represents days of the month (October) and the y axis represents the count which represents frequency. And on the x axis we have the days (time) and on the y axis we have the associated frequencies of each word represented by each line. The line graph makes it easier to observe the trend, i.e. to see whether or not the number of those posts increase or decrease. This visualization will be expanded towards all the date ranges in the JSON dataset. Currently showing only a subset from a partial subset of the main dataset. Lines will show once you select a keyword in the bubble graph.</p>
-
-
-    <p> We created a bubble graph through D3. We used a size encoding based on the area of each circle corresponding to the frequency of how many times that word is used in the posts. </p>
+    <p> We created a bubble graph through D3. We used a size encoding based on the size of each circle corresponding to the frequency of how many times that word is used in the posts. </p>
 
     <p>
-      We also created a network graph to show the relationships of topics and keywords of all the posts. We hope that this graph will help show how some issues may be connected and how some issues may be disconnected. In solving an issue for one problem, it is important to see the bigger picture and how that problem can affect other areas. There is a positional encoding for the lines that connect the data together. The thickness of the links show how often the links are found between two words.
+      We also created a network graph to show the relationships of topics and keywords of all the posts. We hope that this graph will help show how some issues may be connected and how some issues may be disconnected. In solving an issue for one problem, it is important to see the bigger picture and how that problem can affect other areas. There is a positional encoding for the lines that connect the data together. The thickness of the links show how often the links are found between two words. Keywords are represented by green and related words are shown in purple.
+    </p>
+
+    <p>We chose to use a line graph to display the frequency of posts on specific keywords over time. The tilt can help explain the slope of how much of an increase or decrease this specific keyword is mentioned over time. This visualization represents time on the x axis and the y axis represents the count which represents frequency of the words in posts. The line graph makes it easier to observe the trend, i.e. to see whether or not the number of those posts increase or decrease. This visualization will be expanded towards all the date ranges in the JSON dataset. The line graph will be empty unless the user selects a word in the bubble graph.</p>
+    
+    <p>
+      Selection is done through the brushing feature that available on the bubble graph, where the user can brush or click over the keyword to select them. By selecting the keywords, the user will link the selection to the nodes on the network graph. The brush links node on the network graph to show the connections of the selected keywords and highlights the node circle in red on the network graph.
     </p>
 
     <p>
-      The brushing feature is available on the bubble graph, where the user can brush over the keyword to select them. By selecting the keywords, the user will link the selection to the nodes on the network graph. The brush links node on the network graph to show the connections of the selected keywords and highlights the node circle in red on the network graph.
+      Mouse-over features are available on the network and the line graph. Mouse-over on the links show the common links between two nodes. Mouse-over each line will show the keyword that each line represents. This graph is scalable to a larger dataset through minimal adjustments in sizing.
     </p>
 
-     <p>
-      Further more, a line graph will show the trend of the selected keywords over time. Currently, the line graph is not available for testing due to a linking error that might distract the test users. Please test only on the linked bubble and network graph. The line graph is currently showing all 15 keywords, instead of the ones selected. (linking error)
-    </p>
 
     <h1>Demo</h1>
     <video controls width='100%'>
@@ -98,6 +98,18 @@
     </p>
 
     <ul>
+      <li>
+        D3 Tooltip <a href='https://www.d3-graph-gallery.com/graph/interactivity_tooltip.html#position'>
+        (Link)</a> by Yan Holtz on D3 Graph Gallery is referenced for the tooltip used in our line graph and the network chart.
+      </li>
+      <li>
+        Multiple Line Chart <a href='https://datawanderings.com/2019/10/28/tutorial-making-a-line-chart-in-d3-js-v-5/'>
+        (Link)</a> by Data Wanderings is referenced for the basic template of multiple line charts. The use of data slices to sort each line in group makes dispatch selection easier for our multiple line chart.
+      </li>
+      <li>
+        Rectangle Circle Collision <a href='https://stackoverflow.com/questions/21089959/detecting-collision-of-rectangle-with-circle'>
+        (Link)</a> by StackOverflow user 'MarkE'. Code is referenced from the stackover flow page to allow better selection between the rectangular brush and circular nodes. This implements the Euclidean collision between a circle and a rectangle.
+      </li>
       <li>
         Circle Packing <a href='https://observablehq.com/@d3/circle-packing'>
         (Link)</a> by Mike Bostock. The template is referenced for the the bubble graph knowledge to implement the algorithm to build the bubbles properly.
@@ -118,7 +130,7 @@
 
       <li>
         Line Graph Template by Cody Dunne. The template used for line graphs shown in class (DS4200 FA2020, Northeastern University) is used to implement the line graph. In addition, design templates are references from Cody Dunne's style of coding D3. The template follows the <a href='https://bost.ocks.org/mike/chart/'>
-        Reusable Chart Design</a> by Mike Bostock. The template from class assignments are also referenced for CSS/JS/HTML Linking.
+        Reusable Chart Design</a> by Mike Bostock. The template from class assignments are also referenced for CSS/JS/HTML Linking. The code for brush selection is also referenced from Cody Dunne's code in the same assignments. 
       </li>
       <li><a href='https://d3js.org/'>
         D3: Data-Driven Documents</a>

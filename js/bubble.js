@@ -1,5 +1,7 @@
 function graphBubble() {
 
+    // Based on Mike Bostock's margin convention
+    // https://bl.ocks.org/mbostock/3019563
     let margin = {
         top: 10,
         left: 50,
@@ -18,9 +20,9 @@ function graphBubble() {
             "children": dataFromCsv
         }
 
-        // the diameter of the bubbles for d3.pack
+        // the diameter of the bubbles area for d3.pack
         let diameter = 200; 
-
+          // https://observablehq.com/@d3/circle-packing
           // d3.pack to create bubbles algorithm
           let bubble = d3.pack(dataset)
             .size([diameter, diameter])
@@ -32,7 +34,7 @@ function graphBubble() {
               .attr('preserveAspectRatio', 'xMidYMid meet')
               .attr('viewBox', [50, 0, 205, 250].join(' '))
       		
-      		// title
+      		  // title
             svg.append("text") 
                 .attr("y", 13)
                 .attr("x", 150)
@@ -43,10 +45,9 @@ function graphBubble() {
                 .text("Most Used Keywords on UberPeople.net")
                 .style("fill", "rgb(0, 0, 0)")
             
+            // <g> for nodes and links
             svg = svg.append('g')
               .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
-
-              
 
             // all the bubbles in the graph
             let nodes = d3.hierarchy(dataset)
@@ -83,17 +84,14 @@ function graphBubble() {
             })
             .attr("font-family", "sans-serif")
             .attr("font-size", function(d){
+                
                 if ((d.r/3.5) < 1.5) {
-                  return 2
+                  return 2 // the minimum font size before it's too small
                 } 
                 else {
                 return d.r/3.5; // font size is 1/3 radius
             }})
             .style("fill", "black")
-        
-        d3.select(self.frameElement)
-            .style("height", diameter + "px");
-
 
     // brush code (referenced from Cody Dunne's example)
     svg.call(brush);
@@ -139,7 +137,7 @@ function graphBubble() {
 
     		if (distX <= (width/2)) { return true; } 
     		if (distY <= (height/2)) { return true; }
-		return (dx*dx+dy*dy<=(d.r*d.r));
+		      return (dx*dx+dy*dy<=(d.r*d.r));
         })
 
         // Let other charts know about our selection
@@ -160,24 +158,12 @@ function graphBubble() {
     }
 
   // Gets or sets the dispatcher we use for selection events
+  // this chart does not listen for any dispatch
   chart.selectionDispatcher = function (_) {
     if (!arguments.length) return dispatcher;
     dispatcher = _;
     return chart;
   };
-
-  // linking (is not required)
-  // chart.updateSelection = function (selectedData) {
-  //   let selectedWords = [] // keep track of words in a string array
-  //   for (let i =0; i < selectedData.length; i++) {
-  //     selectedWords.push(selectedData[i].keywords)
-  //   }
-  //   if (!arguments.length) return;
-  //   let circles = svg.selectAll('circle')
-  //   circles.classed("selected", function(d){ // if bubble is selected, color it
-  //     return selectedWords.includes(d.data.keywords)
-  //   })
-  // };
 
     return chart;
 }
