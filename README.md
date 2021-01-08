@@ -2,7 +2,7 @@
 
 This repository is your starting point for your project. Please look through all these materials so you know how to organize your project.
 
-Link to your GitHub pages website: `[insert your *clickable* hyperlink here]`
+Link to your GitHub pages website: https://neu-ds-4200-f20.github.io/project-group-4-20th-century-workplace/
 
 # Aim of the assignment
 
